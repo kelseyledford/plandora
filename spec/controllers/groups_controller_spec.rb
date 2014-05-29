@@ -48,15 +48,47 @@ describe GroupsController do
 		end
 	end
 
-	# describe "PUT update" do
-	# 	before do
-	# 		@group = Group.create! valid_attributes
-	# 		put :update, id: @group.id
-	# 	end
-	# 	describe "valid attributes" do
-	# 		it "located the requested @group" do 
-	# 			expect(assigns(:group)).to eq(@group)
-	# 		end
-	# 	end
-	# end
+	describe "PUT update" do
+		let(:updated_attributes) {{
+			:name => 'Cruise',
+			:description => 'Bahamas Baby'}}
+		describe "valid attributes" do
+			before do
+				@group = Group.create! valid_attributes
+				put :update, id: @group.id, group: updated_attributes
+			end
+			it "locates the requested @group" do 
+				expect(assigns(:group)).to eq(@group)
+			end
+			it 'changes the group attributes' do
+				@group.reload
+				expect(@group.name).to eq('Cruise')
+				expect(@group.description).to eq('Bahamas Baby')
+			end
+			it 'redirects to the index path' do
+				expect(response).to redirect_to groups_path
+			end
+		end
+		describe 'invalid attributes' do
+			let(:invalid_attributes) {{
+				:name => 1 }}
+			before do
+				@group = Group.create! valid_attributes
+				put :update, id: @group.id, group: invalid_attributes
+			end
+			it 'locates the requested group' do
+				expect(assigns(:group)).to eq(@group)
+			end
+			# QA this!!!!!
+			it 'does not change the group attributes' do
+				@group.reload
+				expect(@group.name).to_not eq(1)
+			end
+			# Throwing an error
+			it 're-renders the edit method' do
+				expect(response).to render_template :edit
+			end
+		end
+	end
+
 end
