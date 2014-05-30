@@ -4,5 +4,6 @@
 	<%= f.text_area :description, {size: '30x7'} %>
 	<%= f.label 'Trip Type' %>
 	<%= collection_select :group, :theme, Theme.all, :id, :name %>
+	<%= f.file_field :avatar %>
 	<%= f.submit 'Submit' %>
 <% end %>
