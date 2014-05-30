@@ -16,15 +16,38 @@
 
 @import "bootstrap";
 
+.navbar-brand, .navbar-inverse, .navbar-collapse, footer, .container-fluid {
+	background-color: #99CCFF;
+}
+
+.navbar-brand a:link, a:visited, a:active {
+	color: black;
+}
+
+header:hover {
+	font-size: 50px;
+}
+
+#user-widget {
+	margin-top: 10px;
+	margin-right: 5px;
+	text-decoration: none;
+	padding: 7px 5px 5px 5px;
+}
+
+#user-widget li a:link, a:visited, a:active, #sign_in {
+	text-decoration: none;
+	color: black;
+}
+
 footer {
-	color: rgba(230,230,230,.7);
+	color: black;
 	font-size: 14px;
 	text-align: center;
 	border-top: 1px solid black;
 	position:fixed;
 	padding-top: 10px;
     height:50px;
-    background-color:rgba(0,0,0,.9);
     bottom:0px;
     left:0px;
     right:0px;
@@ -38,41 +61,28 @@ footer {
 .contact:hover {
 	color:white;
 	font-size: 20px;
-	background-image: linear-gradient(#275063, black);
-}
-
-#user-widget {
-	margin-top: 10px;
-	margin-right: 5px;
-	text-decoration: none;
-	padding: 7px 5px 5px 5px;
-}
-
-#user-widget li a:link, a:visited, a:active, #sign_in {
-	text-decoration: none;
-	color: lightblue;
+	background-image: linear-gradient(#275063, blue);
 }
 
 .contactgroup {
 	border: 5px solid black;
-	border-radius: 7px;
+	border-radius: 5px;
 	font-size: 17px;
 	color: black;
 }
 
-.contactgroup a:link, a:visited, a:active, {
+.contactgroup a:link, a:visited, a:active {
 	text-decoration: none;
+}
+
+.kelsey, .dean, .charly {
+	border:1px solid black;
+}
+
+.github:link, .github:visited, .github:active {
 	color: blue;
 }
 
-.kelsey {
-	border:1px solid black;
-}
+.linkedin:link, .linkedin:visited, .linkedin:active { 
 
-.dean {
-	border:1px solid black;
-}
-
-.charly {
-	border:1px solid black;
 }
