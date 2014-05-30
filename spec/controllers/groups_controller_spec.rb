@@ -4,6 +4,40 @@ describe GroupsController do
 	let(:valid_attributes) {{
 		:name => 'Vegas',
 		:description => 'turn up'}}
+	describe 'GET index' do
+		before do
+			@group1 = Group.create! valid_attributes
+			@group2 = Group.create! valid_attributes
+			get :index
+		end
+		it 'has a 200 status code' do
+			expect(response.status).to eq(200)
+		end
+		it 'should show all groups from assigning @groups' do
+			expect(assigns(:groups)).to include(@group1)
+			expect(assigns(:groups)).to include(@group2)
+		end
+		it 'should render the index template' do
+			expect(response).to render_template :index
+		end
+	end
+
+	describe 'GET show' do
+		before do
+			@group = Group.create! valid_attributes
+			get :show, id: @group.id
+		end
+		it 'should be successful' do
+			expect(response).to be_success
+		end
+		it 'should show the right group' do
+			expect(assigns(:group)).to eq(@group)
+		end
+		it 'renders the #show view' do
+			expect(response).to render_template :show
+		end
+	end
+
 	describe 'GET new' do
 		before do
 			get :new
@@ -48,6 +82,22 @@ describe GroupsController do
 		end
 	end
 
+	describe 'GET edit' do
+		before do
+			@group = Group.create! valid_attributes
+			get :edit, id: @group.id
+		end
+		it 'should be successful' do
+			expect(response).to be_success
+		end
+		it 'should edit the right group' do
+			expect(assigns(:group)).to eq(@group)
+		end
+		it 'renders the #edit view' do
+			expect(response).to render_template :edit
+		end
+	end
+
 	describe "PUT update" do
 		let(:updated_attributes) {{
 			:name => 'Cruise',
@@ -70,8 +120,11 @@ describe GroupsController do
 			end
 		end
 		describe 'invalid attributes' do
-			let(:invalid_attributes) {{
-				:name => 1 }}
+			let :invalid_attributes do
+				{
+					:name => nil,
+					:description => 'Fun'
+				} end
 			before do
 				@group = Group.create! valid_attributes
 				put :update, id: @group.id, group: invalid_attributes
@@ -79,12 +132,10 @@ describe GroupsController do
 			it 'locates the requested group' do
 				expect(assigns(:group)).to eq(@group)
 			end
-			# QA this!!!!!
 			it 'does not change the group attributes' do
 				@group.reload
-				expect(@group.name).to_not eq(1)
+				expect(@group.name).to_not eq(nil)
 			end
-			# Throwing an error
 			it 're-renders the edit method' do
 				expect(response).to render_template :edit
 			end
