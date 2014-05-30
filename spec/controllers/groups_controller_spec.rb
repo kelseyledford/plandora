@@ -6,6 +6,8 @@ describe GroupsController do
 		:description => 'turn up'}}
 	describe 'GET index' do
 		before do
+			@page = Page.create! valid_attributes
+
 			@group1 = Group.create! valid_attributes
 			@group2 = Group.create! valid_attributes
 			get :index
