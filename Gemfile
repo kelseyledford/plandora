@@ -41,6 +41,8 @@ group :test do
   gem 'shoulda-matchers'
 end
 
+gem 'instagram'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
