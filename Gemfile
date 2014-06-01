@@ -5,6 +5,8 @@ gem 'rails', '4.0.4'
 gem 'omniauth-facebook', '1.4.0'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk'
+gem 'gmaps4rails'
+gem "geocoder"
 
 # Use postgresql as the database for Active Record
 gem 'pg'

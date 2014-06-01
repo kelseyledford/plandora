@@ -1,0 +1,10 @@
+<%= form_for @direction do |f| %>
+	<%= f.text_field :name, placeholder: 'Destination', label: 'Destination Name' %>
+	<%= f.text_field :street, placeholder: 'Address', label: 'Address' %>
+	<%= f.text_field :city, placeholder: 'City', label: 'City' %>
+	<%= f.text_field :state, placeholder: 'State', label: 'CA' %>
+	<%= f.text_field :zip, placeholder: 'Zip', label: 'Zip' %>
+	<%= f.label 'Details' %>
+	<%= f.text_area :details, {size: '30x7'} %>
+	<%= f.submit %>
+<% end %>

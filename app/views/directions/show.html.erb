@@ -1,0 +1,24 @@
+<h1><%= @direction.name %></h1>
+<h3>Address</h3>
+<p><%= @direction.street %>, <%= @direction.city %>, <%= @direction.state %>, <%= @direction.zip %></p>
+<h3>Details</h3>
+<p><%= @direction.details %></p>
+
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+<script type ="text/javascript">
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {zoom: 14, provider_key: "AIzaSyBnugBXbtHJ6qqIyILKqKPQ1l2rafKtjx0"}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarker(
+      {
+        lat: <%= @direction.latitude %>,
+        lng: <%= @direction.longitude %>
+      }
+    );
+    handler.map.centerOn({
+      lat: <%= @direction.latitude %>,
+      lng: <%= @direction.longitude %>
+    });
+  });
+</script>

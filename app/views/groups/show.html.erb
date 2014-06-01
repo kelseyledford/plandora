@@ -3,3 +3,5 @@
 <%= image_tag @group.avatar.url %>
 
 <p><%= @group.description %></p>
+
+<%= link_to "Update this Group", edit_group_path(@group) %>
