@@ -1,6 +1,7 @@
 Plandora::Application.routes.draw do
 
   resources :groups
+  resources :welcome
   resources :users
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
