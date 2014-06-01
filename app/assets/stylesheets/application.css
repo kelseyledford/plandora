@@ -24,20 +24,22 @@
 	color: black;
 }
 
-header:hover {
-	font-size: 50px;
+.navbar-inverse .navbar-brand {
+	color: black;
 }
 
 #user-widget {
-	margin-top: 10px;
 	margin-right: 5px;
 	text-decoration: none;
-	padding: 7px 5px 5px 5px;
 }
 
-#user-widget li a:link, a:visited, a:active, #sign_in {
+#user-widget li a:link, a:visited, a:active {
 	text-decoration: none;
 	color: black;
+}
+
+.about_nav li a:link, a:visited, a:active {
+	text-decoration: none;
 }
 
 footer {
@@ -54,14 +56,12 @@ footer {
     margin-bottom: -5px;
 }
 
-.contact {
-	height: 80px;
-}
 
-.contact:hover {
-	color:white;
+.contact:hover, #user-widget:hover, .about_nav:hover {
+	color:blue;
 	font-size: 20px;
-	background-image: linear-gradient(#275063, blue);
+	/*background-image: linear-gradient(darkblue, #99CCFF);*/
+	cursor: pointer;
 }
 
 .contactgroup {
@@ -75,6 +75,10 @@ footer {
 	text-decoration: none;
 }
 
+.about_nav, .contact_nav, #user-widget {
+	margin-left: 5px;
+	padding-bottom: 4px;
+}
 .kelsey, .dean, .charly {
 	border:1px solid black;
 }
