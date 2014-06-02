@@ -17,6 +17,7 @@ describe Direction do
 		it { should have_db_column(:zip) }
 		it { should have_db_column(:latitude) }
 		it { should have_db_column(:longitude) }
+		it { should belong_to(:group) }
 	end
 	describe '#address' do
 		it 'should combine street, city, state and zip into an address' do

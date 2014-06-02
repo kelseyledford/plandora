@@ -1,7 +1,15 @@
 <h1><%= @group.name %></h1>
 
-<%= image_tag @group.avatar.url %>
+<% if @group.avatar_file_name %>
+	<%= image_tag @group.avatar.url %>
+<% end %>
 
 <p><%= @group.description %></p>
 
 <%= link_to "Update this Group", edit_group_path(@group) %>
+
+<% unless @group.direction %>
+	<%= link_to "New Directions", new_group_direction_path(@group) %>
+<% else %>
+	<%= link_to "Directions", group_direction_path(@group, @direction) %>
+<% end %>

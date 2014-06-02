@@ -13,4 +13,6 @@ class Direction < ActiveRecord::Base
   validates_length_of :state, is: 2, message: "Please enter a valid state"
   validates :zip, length: { is: 5, message: "Zipcode is too short" }, numericality: { only_integer: true, message: "Please enter a valid zip code" }
   
+  belongs_to :group
+
 end

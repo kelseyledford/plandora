@@ -1,4 +1,5 @@
-<%= form_for @direction do |f| %>
+<!-- URL has to be specified directly in the form as a workaround for a long-standing bug with forms for singular resources -->
+<%= form_for @direction, :url => group_direction_path(@group) do |f| %>
 	<%= f.text_field :name, placeholder: 'Destination', label: 'Destination Name' %>
 	<%= f.text_field :street, placeholder: 'Address', label: 'Address' %>
 	<%= f.text_field :city, placeholder: 'City', label: 'City' %>

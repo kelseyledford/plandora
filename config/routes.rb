@@ -1,10 +1,11 @@
 Plandora::Application.routes.draw do
 
-  resources :groups
+  resources :groups do
+    resource :direction
+  end
   resources :welcome
   resources :users
   resources :chats
-  resources :directions
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]

@@ -1,11 +1,9 @@
 class DirectionsController < ApplicationController
 
-	def index
-		@directions = Direction.all
-	end
+	before_action :set_group
+	before_action :set_direction, :only => [:create, :show, :edit, :update]
 
 	def show
-		@direction = Direction.find(params[:id])
 	end
 
 	def new
@@ -13,22 +11,20 @@ class DirectionsController < ApplicationController
 	end
 
 	def create
-		@direction = Direction.new(direction_params)
-			if @direction.save
-				redirect_to directions_path
-			else
-				render :new
-			end
+		@direction = Direction.create(direction_params.merge(group: @group))
+		if @direction.save
+			redirect_to group_direction_path(@group, @direction)
+		else
+			render :new
+		end
 	end
 
 	def edit
-		@direction = Direction.find(params[:id])
 	end
 
 	def update
-		@direction = Direction.find(params[:id])
-		if @direction.update(direction_params)
-			redirect_to directions_path
+		if @direction.update_attributes(direction_params)
+			redirect_to group_path(@group)
 		else
 			render :edit
 		end
@@ -37,7 +33,15 @@ class DirectionsController < ApplicationController
 	private
 
 	def direction_params
-		params.require(:direction).permit(:name, :details, :street, :city, :state, :zip, :latitude, :longitude)
+		params.require(:direction).permit(:name, :details, :street, :city, :state, :zip, :latitude, :longitude, :group_id)
+	end
+
+	def set_group
+		@group = Group.find(params[:group_id])
+	end
+
+	def set_direction
+		@direction =  @group.direction
 	end
 
 end

@@ -5,6 +5,11 @@
 	<%= f.label 'Trip Type' %>
 	<%= collection_select :group, :theme, Theme.all, :id, :name %>
 	<%= f.file_field :avatar %>
-	<p>Features:</p><br />
+	<br>
+	<p>Users:<p>
+	<br>
+	<%= collection_check_boxes :group, :user_ids, User.all, :id, :name %>
+	<p>Features:</p>
+	<br>
 	<%= f.submit 'Submit' %>
 <% end %>
