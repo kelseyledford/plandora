@@ -11,13 +11,15 @@
  *= require_self
  *= require_tree .
  *= require bootstrap
+ *= require rails_bootstrap_forms
  */
 
 
 @import "bootstrap";
 
-.navbar-brand, .navbar-inverse, .navbar-collapse, footer, .container-fluid {
+footer, .navbar-custom {
 	background-color: #99CCFF;
+	opacity: 0.9;
 }
 
 .navbar-brand a:link, a:visited, a:active {
@@ -25,6 +27,10 @@
 }
 
 .navbar-inverse .navbar-brand {
+	color: black;
+}
+
+.navbar-nav, .navbar-right {
 	color: black;
 }
 
@@ -38,8 +44,9 @@
 	color: black;
 }
 
-.about_nav li a:link, a:visited, a:active {
+#about_nav a:link, a:visited, a:active {
 	text-decoration: none;
+	color: black;
 }
 
 footer {
@@ -57,36 +64,42 @@ footer {
 }
 
 
-.contact:hover, #user-widget:hover, .about_nav:hover {
-	color:blue;
+
+.contact:hover, .user-widget:hover, .about_nav:hover, .tutorial_nav:hover {
+	color:black;
 	font-size: 20px;
 	/*background-image: linear-gradient(darkblue, #99CCFF);*/
 	cursor: pointer;
 }
 
 .contactgroup {
-	border: 5px solid black;
+	border: 5px solid white;
 	border-radius: 5px;
 	font-size: 17px;
-	color: black;
+	color: white;
+	background-color: black;
+	padding-left: 10px;
 }
 
 .contactgroup a:link, a:visited, a:active {
 	text-decoration: none;
+	color: yellow;
 }
 
-.about_nav, .contact_nav, #user-widget {
+.contactgroup a:hover {
+	font-size: 22px;
+}
+
+.contact_names {
+
+	font-size: 24px;
+}
+
+#user-widget {
 	margin-left: 5px;
 	padding-bottom: 4px;
 }
+
 .kelsey, .dean, .charly {
 	border:1px solid black;
-}
-
-.github:link, .github:visited, .github:active {
-	color: blue;
-}
-
-.linkedin:link, .linkedin:visited, .linkedin:active { 
-
 }

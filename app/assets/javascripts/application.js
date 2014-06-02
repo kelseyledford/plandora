@@ -12,9 +12,22 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+
+$('#scroll_plandora').click(function(){
+	$('html,body').animate({
+            scrollTop: $(".navbar-header").offset().top
+        }, 800);
+	});  
+
+
+$('#about_nav').click(function(){
+	$('html,body').animate({
+            scrollTop: $(".plandora_info").offset().top
+        }, 800);
+	});    
 
 
 

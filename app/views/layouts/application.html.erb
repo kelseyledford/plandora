@@ -2,15 +2,15 @@
 <html>
 <head>
   <title>Plandora</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application"%>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'http://www.tenaadam.com/wp-content/themes/portal/images/favicon.ico' %>
 </head>
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	<div class="container-fluid">
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-custom" role="navigation">
+	<div class="container-fluid navbar-custom">
 		<!-- Brand and toggle get grouped for better mobile display -->
     	<div class="navbar-header">
       		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -19,33 +19,27 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
       		</button>
-      		<a class="navbar-brand" href="#" id="scroll_top" onclick="scollWin();"/>Plandora</a>
+      		<a class="navbar-brand" href="" id="scroll_plandora" onclick="scroll_top();"/>Plandora</a>
 		</div>
     	<!-- Collect the nav links, forms, and other content for toggling -->
-    	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    	<div class="collapse navbar-collapse navbar-custom" id="bs-example-navbar-collapse-1">
     		<ul class="nav navbar-nav navbar-right">
-    			<div class="about_nav">
-					<li>
+					<li class="about_nav">
 						<%= link_to "About Plandora", id:"about_nav" %>
 					</li>
-				</div>
-				<div class="contact_nav">	
-					<li>
-						<span class="contact" data-toggle="modal" data-target=".bs-example-modal-lrg">Contact</span>
+					<li class="tutorial_nav">
+						<%= link_to "Tutorial", id:"tutorial_nav" %>
 					</li>
-				</div>
-	    		<div id="user-widget">
 		         <% if current_user %>
-			        <li>
+			        <li class="user-widget">
 			        	 Welcome <strong><%= current_user.name %></strong>!
 			      		 <%= link_to "Sign out", signout_path, id: "sign_out" %>
 			        </li>
 		         <% else %>
-		        	<li>
+		        	<li class="user-widget">
 		        		<%= link_to "Facebook Login", "/auth/facebook", id: "sign_in" %>
 		   			</li>
 		   		 <% end %>
-				</div>
          	</ul>
     	</div><!-- /.navbar-collapse -->
   	</div><!-- /.container-fluid -->
@@ -65,7 +59,7 @@ Copyright 2014 | Plandora | <span class="contact" data-toggle="modal" data-targe
 	    <div class="modal-content">
 		    <div class="contactgroup">
 				<div class="kelsey col-lrg-4"> 
-					<strong>Kelsey Ledford</strong> <br />
+					<strong class="contact_names">Kelsey Ledford</strong> <br />
 					Email: kelsey.d.ledford@gmail.com <br />
 					<span class="github">
 						<a href="https://github.com/kelseyledford" target="_blank">Github</a>
@@ -75,7 +69,7 @@ Copyright 2014 | Plandora | <span class="contact" data-toggle="modal" data-targe
 					</span>
 				</div>
 				<div class="dean col-lrg-4">
-					<strong>Dean Mandile</strong> <br />
+					<strong class="contact_names">Dean Mandile</strong> <br />
 					Email: mandile24@gmail.com <br />
 					<span class="github">
 						<a href="https://github.com/Deanskee" target="_blank">Github</a>
@@ -85,7 +79,7 @@ Copyright 2014 | Plandora | <span class="contact" data-toggle="modal" data-targe
 					 </span>
 				</div>
 				<div class="charly col-lrg-4"> 
-					<strong>Charly Yoon</strong> <br />
+					<strong class="contact_names">Charly Yoon</strong> <br />
 					Email: cyoon90@yahoo.com <br />
 					<span class="github">
 						<a href="https://github.com/charlyy" target="_blank">Github</a>
