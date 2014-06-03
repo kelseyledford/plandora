@@ -1,0 +1,10 @@
+<h1><%= @poll.topic %></h1>
+<ul>
+	<li><%= @poll.option1 %></li>
+	<li><%= @poll.option2 %></li>
+	<li><%= @poll.option3 %></li>
+	<li><%= @poll.option4 %></li>
+	<li><%= @poll.option5 %></li>
+</ul>
+
+<%= link_to 'Edit', edit_group_poll_path(@group, @poll) %>

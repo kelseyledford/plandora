@@ -9,5 +9,6 @@ class Group < ActiveRecord::Base
   has_many :users, through: :user_groups
   belongs_to :theme
   has_one :direction
+  has_many :polls
 
 end

@@ -15,3 +15,7 @@
 <% end %>
 
 <%= link_to "Chat", group_chat_path(@group, @chat) %>
+
+<%= link_to "Polls", group_polls_path(@group) %>
+
+<%= link_to "New Poll", new_group_poll_path(@group) %>

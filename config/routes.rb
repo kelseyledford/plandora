@@ -3,6 +3,7 @@ Plandora::Application.routes.draw do
   resources :groups do
     resource :direction
     resource :chat
+    resources :polls
   end
   resources :welcome
   resources :users
