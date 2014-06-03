@@ -6,6 +6,13 @@
 
 <p><%= @group.description %></p>
 
+<p>Group Members:</p>
+<ul>
+	<% @group.users.each do |user| %>
+	<li><%= user.name %></li>
+	<% end %>
+</ul>
+
 <% unless @group.direction %>
 	<%= link_to "New Directions", new_group_direction_path(@group) %>
 <% else %>
