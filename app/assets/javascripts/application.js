@@ -14,4 +14,25 @@
 //= require jquery_ujs
 //= require underscore
 //= require gmaps/google
+//= require bootstrap
 //= require_tree .
+
+
+$(document).ready(function() {
+
+ $("a[href='#scrollplandora']").click(function() {
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+        });
+
+$("a[href='#aboutplandora']").click(function() {
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+        });
+
+$("a[href='#howplandora']").click(function() {
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+        });
+
+});

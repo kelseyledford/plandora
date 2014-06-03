@@ -10,4 +10,73 @@
  *
  *= require_self
  *= require_tree .
+ *= require bootstrap
+ *= require rails_bootstrap_forms
  */
+
+
+@import "bootstrap";
+
+footer, .navbar-custom {
+	background-color: #99CCFF;
+	opacity: 0.8;
+}
+
+#user-widget {
+	text-decoration: none;
+	padding-bottom: 4px;
+}
+
+#user-widget li a:link, a:visited, a:active {
+	text-decoration: none;
+	color: black;
+}
+
+#about_nav a:link, a:visited, a:active{
+	text-decoration: none;
+	color: black;
+}
+
+footer {
+	color: black;
+	font-size: 14px;
+	text-align: center;
+	border-top: 1px solid black;
+	position:fixed;
+	padding-top: 10px;
+    height:50px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom: -5px;
+}
+
+.contact:hover, .user-widget:hover, .about_nav:hover, .tutorial_nav:hover {
+	color: black;
+	font-size: 20px;
+	font-weight: bolder;
+	cursor: pointer;
+}
+
+.contactgroup {
+	border: 5px solid black;
+	border-radius: 5px;
+	font-size: 17px;
+	color: black;
+	background-color: white;
+	padding: 10px;
+}
+
+.contactgroup a:link, a:visited, a:active {
+	text-decoration: none;
+	color: darkblue;
+}
+
+.contactgroup a:hover {
+	font-size: 22px;
+}
+
+.contact_names {
+	font-size: 24px;
+}
+

@@ -9,6 +9,7 @@ describe Group do
     it { should have_one(:direction) }
 		it { should have_db_column(:name) }
 		it { should have_db_column(:description) }
+    it { should belong_to(:theme) }
   end
   describe 'validations' do
   	before do

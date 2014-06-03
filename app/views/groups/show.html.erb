@@ -6,8 +6,6 @@
 
 <p><%= @group.description %></p>
 
-<%= link_to "Update this Group", edit_group_path(@group) %>
-
 <% unless @group.direction %>
 	<%= link_to "New Directions", new_group_direction_path(@group) %>
 <% else %>
@@ -19,3 +17,5 @@
 <%= link_to "Polls", group_polls_path(@group) %>
 
 <%= link_to "New Poll", new_group_poll_path(@group) %>
+
+<%= link_to "Edit your group", edit_group_path(@group) %>
