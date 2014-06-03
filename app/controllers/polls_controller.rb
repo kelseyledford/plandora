@@ -1,6 +1,6 @@
 class PollsController < ApplicationController
 
-	before_action :set_group
+	before_action :set_group, :only => [:index, :create, :new]
 	before_action :set_poll, :only => [:show, :edit, :update]
 
 	def index
@@ -28,7 +28,7 @@ class PollsController < ApplicationController
 
 	def update
 		if @poll.update(poll_params)
-			redirect_to group_polls_path(@group)
+			redirect_to group_polls_path(@poll.group)
 		else
 			render :edit
 		end
@@ -37,7 +37,7 @@ class PollsController < ApplicationController
 	private
 
 	def poll_params
-		params.require(:poll).permit(:topic, :option1, :option2, :option3, :option4, :option5)
+		params.require(:poll).permit(:topic)
 	end
 
 	def set_group

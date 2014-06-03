@@ -1,10 +1,12 @@
-<h1><%= @poll.topic %></h1>
-<ul>
-	<li><%= @poll.option1 %></li>
-	<li><%= @poll.option2 %></li>
-	<li><%= @poll.option3 %></li>
-	<li><%= @poll.option4 %></li>
-	<li><%= @poll.option5 %></li>
-</ul>
+<h1>Table Show Page</h1>
 
-<%= link_to 'Edit', edit_group_poll_path(@group, @poll) %>
+<table border="1">
+	<th><%= @poll.topic %></th>
+	<% @poll.poll_options.each do |po| %>
+	<tr>
+		<td><%= po.option %></td>
+	</tr>
+	<% end %>
+</table>
+
+<%= link_to 'Edit', edit_poll_path(@poll) %>

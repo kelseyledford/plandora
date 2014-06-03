@@ -1,10 +1,5 @@
 <%= form_for [@group, @poll] do |f| %>
 	<%= f.text_field :topic, placeholder: 'Topic', label: 'Topic' %>
-	<%= f.label 'Options' %>
-	<%= f.text_field :option1, placeholder: 'Option' %>
-	<%= f.text_field :option2, placeholder: 'Option' %>
-	<%= f.text_field :option3, placeholder: 'Option' %>
-	<%= f.text_field :option4, placeholder: 'Option' %>
-	<%= f.text_field :option5, placeholder: 'Option' %>
+<!-- Nest poll_option form here! -->
 	<%= f.submit %>
 <% end %>
