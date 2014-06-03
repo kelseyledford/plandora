@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140601213201) do
+ActiveRecord::Schema.define(version: 20140603002449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chats", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "group_id"
+  end
+
+  add_index "chats", ["group_id"], name: "index_chats_on_group_id", using: :btree
 
   create_table "directions", force: true do |t|
     t.string   "name"
