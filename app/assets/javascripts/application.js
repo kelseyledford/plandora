@@ -16,18 +16,21 @@
 //= require_tree .
 
 
-$('#scroll_plandora').click(function(){
-	$('html,body').animate({
-            scrollTop: $(".navbar-header").offset().top
-        }, 800);
-	});  
+$(document).ready(function() {
 
+ $("a[href='#scrollplandora']").click(function() {
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+        });
 
-$('#about_nav').click(function(){
-	$('html,body').animate({
-            scrollTop: $(".plandora_info").offset().top
-        }, 800);
-	});    
+$("a[href='#aboutplandora']").click(function() {
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+        });
 
+$("a[href='#howplandora']").click(function() {
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+        });
 
-
+});

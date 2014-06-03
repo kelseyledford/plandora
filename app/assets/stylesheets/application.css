@@ -19,24 +19,12 @@
 
 footer, .navbar-custom {
 	background-color: #99CCFF;
-	opacity: 0.9;
-}
-
-.navbar-brand a:link, a:visited, a:active {
-	color: black;
-}
-
-.navbar-inverse .navbar-brand {
-	color: black;
-}
-
-.navbar-nav, .navbar-right {
-	color: black;
+	opacity: 0.8;
 }
 
 #user-widget {
-	margin-right: 5px;
 	text-decoration: none;
+	padding-bottom: 4px;
 }
 
 #user-widget li a:link, a:visited, a:active {
@@ -44,7 +32,7 @@ footer, .navbar-custom {
 	color: black;
 }
 
-#about_nav a:link, a:visited, a:active {
+#about_nav a:link, a:visited, a:active{
 	text-decoration: none;
 	color: black;
 }
@@ -63,27 +51,25 @@ footer {
     margin-bottom: -5px;
 }
 
-
-
 .contact:hover, .user-widget:hover, .about_nav:hover, .tutorial_nav:hover {
-	color:black;
+	color: black;
 	font-size: 20px;
-	/*background-image: linear-gradient(darkblue, #99CCFF);*/
+	font-weight: bolder;
 	cursor: pointer;
 }
 
 .contactgroup {
-	border: 5px solid white;
+	border: 5px solid black;
 	border-radius: 5px;
 	font-size: 17px;
-	color: white;
-	background-color: black;
-	padding-left: 10px;
+	color: black;
+	background-color: white;
+	padding: 10px;
 }
 
 .contactgroup a:link, a:visited, a:active {
 	text-decoration: none;
-	color: yellow;
+	color: darkblue;
 }
 
 .contactgroup a:hover {
@@ -91,15 +77,6 @@ footer {
 }
 
 .contact_names {
-
 	font-size: 24px;
 }
 
-#user-widget {
-	margin-left: 5px;
-	padding-bottom: 4px;
-}
-
-.kelsey, .dean, .charly {
-	border:1px solid black;
-}
