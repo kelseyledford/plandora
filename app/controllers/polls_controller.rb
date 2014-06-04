@@ -9,6 +9,7 @@ class PollsController < ApplicationController
 
 	def new
 		@poll = Poll.new
+		@poll.poll_options.build
 	end
 
 	def create
@@ -37,7 +38,7 @@ class PollsController < ApplicationController
 	private
 
 	def poll_params
-		params.require(:poll).permit(:topic)
+		params.require(:poll).permit(:topic, poll_options_attributes: [:option])
 	end
 
 	def set_group
