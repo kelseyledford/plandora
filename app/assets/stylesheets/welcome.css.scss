@@ -4,20 +4,14 @@
 
 .welcome_container {
 	margin-top: 50px;
-	background: url("airplane.jpg");
 }
 
 .welcome_plandora {
 	width: 100%;
-	height: 600px;
+	height: 650px;
 	margin: 0 auto;
 	border-bottom: 1px solid black;
-}
-
-#logo {
-	width: 317px;
-	display: block;
-	margin: 0 auto;
+	background: url("airplane.jpg");
 }
 
 header {
@@ -27,22 +21,26 @@ header {
 	text-align: center;
 }
 
-.plandora_info h1 {
-	margin-top: 70px;
+#logo {
+	width: 317px;
+	display: block;
+	margin: 0 auto;
 }
 
+.plandora_info h2 {
+	margin-top: 60px;
+	color: black;
+	font-weight: bolder;
+}
 
-.plandora_info, .plandora_tutorial {
+.plandora_info {
 	text-align: center;
 	width: 100%;
-	height: 600px;
+	height: 640px;
 	border: 1px solid black;
-	background-color: rgba(220,220,220,1);	
+	background-color: rgba(120,120,120,1);	
 }
 
-.plandora_tutorial {
-	background-color: rgba(120,140,210,1);
-}
 
 .what_is_plandora {
 	text-align: center;
@@ -50,8 +48,8 @@ header {
 	background-color: white;
 	border-radius: 80px;
 	opacity: .7;
-	height: 300px;
-	width: 500px;
+	height: 400px;
+	width: 600px;
 	margin: 0px auto;
 	margin-top: 50px;
 }
@@ -60,8 +58,79 @@ header {
 .what_is_plandora_info {
 	color: black;
 	height: 250px;
-	width: 400px;
+	width: 505px;
 	font-size: 20px;
 	text-align: center;
 	margin: 50px 0 0 40px;
 }
+
+.features_info_container {
+	background: white;
+	opacity: .7;
+	border-radius: 60px;
+	border: 5px solid black;
+	margin: 0 auto;
+	height: 350px;
+	width: 600px;
+}
+
+.features_info {
+	margin-top: 16px;
+	height: 310px;
+	width: 580px;
+	overflow: scroll;
+}
+
+.plandora_features {
+	background: url("planner.jpg");
+	text-align: center;
+	width: 100%;
+	height: 640px;
+	margin-top: -20px;
+	border: 2px solid black;
+}
+
+.plandora_features h1 {
+	color: white;
+	padding: 20px 0;
+
+}
+
+
+
+
+@media (max-width: 600px) {
+
+	header {
+		font-size: 55px;
+	}
+
+	#plandoralogoshrink {
+		height: 200px;
+	}
+
+	.what_is_plandora {
+		height: 300px;
+		width: 300px;
+	}
+
+	.features_info_container {
+		height: 300px;
+		width: 300px;
+	}
+
+	.features_info {
+		height: 260px;
+		width: 280px;
+	}
+	
+	.what_is_plandora_info {
+		height: 250px;
+		width: 280px;
+		font-size: 20px;
+		text-align: center;
+		margin: 60px 0 0 4px;
+	}
+
+}
+

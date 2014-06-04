@@ -26,12 +26,12 @@ $(document).ready(function() {
         });
 
 $("a[href='#aboutplandora']").click(function() {
-      $("html, body").animate({ scrollTop: 0 }, "slow");
+      $("html, body").animate({ scrollTop: $("#plandora_info_scroll") }, "slow");
         return false;
         });
 
 $("a[href='#howplandora']").click(function() {
-      $("html, body").animate({ scrollTop: 0 }, "slow");
+      $("html, body").animate({ scrollTop: $("#plandora_tutorial_scroll") }, "slow");
         return false;
         });
 

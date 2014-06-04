@@ -1,0 +1,31 @@
+.navbar-inverse, .navbar-nav > li > a {
+	color: black !important;
+	font-weight: bolder;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover{
+	color: black !important;
+	font-weight: bolder;
+}
+
+.navbar-inverse .navbar-brand {
+	color: black !important;
+	font-weight: bolder;
+}
+
+
+.plandoralogo {
+	 position:fixed;
+     left: 8px;
+     top: 2px;
+     width:150px;
+     z-index:20000;
+}
+
+.plandoralogo a:link, a:visited, a:active {
+	color: black;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+
