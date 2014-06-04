@@ -8,6 +8,7 @@ gem 'aws-sdk'
 gem 'gmaps4rails'
 gem "geocoder"
 gem 'acts_as_votable', '~> 0.9.0'
+gem 'pry'
 
 # Use postgresql as the database for Active Record
 gem 'pg'

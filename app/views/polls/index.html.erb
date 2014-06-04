@@ -5,7 +5,12 @@
 	<th><%= poll.topic %></th>
 	<% poll.poll_options.each do |po| %>
 		<tr>
-			<td><%= po.option %></td>
+			<td>
+				<%= po.option %>
+				<%= po.get_likes.size %>
+				<%= link_to "Upvote", like_poll_option_path(@group, @poll, @poll_option), method: :put %>
+				</div>
+			</td>
 		</tr>
 	<% end %>
 	<% end %>

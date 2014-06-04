@@ -1,7 +1,7 @@
 class PollOptionsController < ApplicationController
 
 	before_action :set_poll, :only => [:index, :create, :new]
-	before_action :set_poll_option, :only => [:show, :edit, :update]
+	before_action :set_poll_option, :only => [:show, :edit, :update, :upvote]
 
 	def index
 		@poll_options = @poll.poll_options
@@ -32,6 +32,11 @@ class PollOptionsController < ApplicationController
 		else
 			render :edit
 		end
+	end
+
+	def upvote
+	  @poll_option.liked_by current_user
+	  redirect_to :back
 	end
 
 	private

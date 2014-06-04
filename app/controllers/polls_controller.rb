@@ -9,7 +9,10 @@ class PollsController < ApplicationController
 
 	def new
 		@poll = Poll.new
-		@poll.poll_options.build
+		4.times do
+			poll_options = @poll.poll_options.build
+		end
+		# @poll.poll_options.build
 	end
 
 	def create
