@@ -8,8 +8,7 @@
 			<td>
 				<%= po.option %>
 				<%= po.get_likes.size %>
-				<%= link_to "Upvote", like_poll_option_path(@group, @poll, @poll_option), method: :put %>
-				</div>
+				<%= link_to "Upvote", like_poll_option_path(po), method: :put %>
 			</td>
 		</tr>
 	<% end %>
