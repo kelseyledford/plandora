@@ -65,20 +65,21 @@ textarea {
 
 
 .group_show_container {
-	height: 470px;
-	width: 800px;
+	height: 550px;
+	width: 90%;
 	margin: 0 auto;
 }
 
 .group_show_info {
-	height: 400px;
+	height: 85%;
 	width: 80%;
 	border: 5px solid black;
 	margin: 0 auto;
 	background-color: white;
 	color: black;
-	margin-top: 70px;
+	margin-top: 60px;
 	border-radius: 40px;
+	padding: 10px 50px;
 }
 
 .group_name {
@@ -141,9 +142,30 @@ textarea {
 
 /****** Media Queries ******/
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
-
-
+	.group_show_container {
+		width: 80%;
+	}
+	.group_show_info {
+		height: 80%;
+		padding: 0 10px 0 10px;
+		overflow: scroll;
+	}
+	.group_name h1 {
+		font-size: 19px;
+		font-weight: bolder;
+	}
 }
 
+@media (max-width: 370px) {
+
+	.group_show_container {
+		height: 90%;
+	}
+
+	.group_show_info {
+		margin-left: -10px !important;
+		width: 108%;
+	}
+}

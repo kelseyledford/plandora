@@ -34,30 +34,26 @@
 					<li class="tutorial_nav">
 						<%#= link_to "Tutorial", id:"tutorial_nav" %>
 					</li> -->
-		         <% if current_user %>
+		        <% if current_user %>
+		         	<li class="dropdown">
+		  				<a data-toggle="dropdown" href="#">Groups<b class="caret"></b></a>
+		  				<ul class="dropdown-menu" role="menu">
+		  					<% @groups.each do |group| %>
+			    				<li class="group_name_list"><%= link_to group.name, group %></li>
+			    				<li role="presentation" class="divider"></li>
+	  						<% end %>
+	    				<li class="add_group_style"><%= link_to "+ Add New Group", new_group_path %></li>
+	    				<li role="presentation" class="divider"></li>
+	  					</ul>
+					</li>
 			        <li class="user-widget">
-			        	 Welcome <strong><%= current_user.name %></strong>!
 			      		 <%= link_to "Sign out", signout_path, id: "sign_out" %>
 			        </li>
-			    <li class="dropdown">
-  				<a data-toggle="dropdown" href="#">Groups<b class="caret"></b></a>
-  				<ul class="dropdown-menu" role="menu">
-  					<% @groups.each do |group| %>
-    				<li><%= link_to group.name, group %></li>
-    			<li role="presentation" class="divider"></li>
-  					<% end %>
-<<<<<<< HEAD
-    			<li><%= link_to "Add New Group", new_group_path %></li>
-=======
-  					<li><%= link_to "Add New Group", new_group_path %></li>
->>>>>>> c1b84eea91678cc54c4a4602ad03f5d36c59b42f
-  				</ul>
-				</li>
-		         <% else %>
+		        <% else %>
 		        	<li class="user-widget">
 		        		<%= link_to "Facebook Login", "/auth/facebook", id: "sign_in" %>
 		   			</li>
-		   		 <% end %>
+		   		<% end %>
          	</ul>
     	</div><!-- /.navbar-collapse -->
   	</div><!-- /.container-fluid -->
