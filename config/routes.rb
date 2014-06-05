@@ -13,6 +13,7 @@ Plandora::Application.routes.draw do
     resources :schedules, shallow: true do
       resources :plans
     end
+    resources :links
   end
   resources :welcome
   resources :users

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140604230919) do
+ActiveRecord::Schema.define(version: 20140605184524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,16 @@ ActiveRecord::Schema.define(version: 20140604230919) do
   end
 
   add_index "groups", ["theme_id"], name: "index_groups_on_theme_id", using: :btree
+
+  create_table "links", force: true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.integer  "group_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "links", ["group_id"], name: "index_links_on_group_id", using: :btree
 
   create_table "plans", force: true do |t|
     t.string   "activity"
