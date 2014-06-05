@@ -1,0 +1,49 @@
+<% if current_user.groups = nil %>
+	<p>You aren't in any groups! Make a new one? <%= link_to new_groups_path %></p>
+<% else %>
+
+<% end %>
+
+
+<ul>
+	<% current_user.groups.each do |group| %>
+		<li><%= current_user.group.name %></li>
+	<% end %>
+</ul>
+
+direction_attributes: [:name, :details, :street, :city, :state, :zip, :latitude, :longitude]
+
+	<%= collection_check_boxes :group, :user_ids, User.all, :id, :name %>
+
+
+			<% User.all.each do |user| %>
+		<%= check_box_tag :user_ids, user.id, @group.users.include?(user), :name => 'group[user_ids][]' %>
+		<%= user.name %>
+	<% end %>
+
+
+			<%= check_box_tag "group[user_ids][]", user.id, @group.users.include?(users) %>
+		<%= user.name %>
+
+
+/app/assets/javascripts/facebook.js.coffee
+/config/initializers/omniauth.rb
+/config/enviornments/production.rb
+/config/enviornments/development.rb
+
+
+<% @group.polls.each do |poll| %>
+	<table border="1">
+		<th><%= poll.topic %></th>
+		<% poll.poll_options.each do |po| %>
+			<tr>
+				<td>
+					<%= po.option %>
+					<%= po.get_likes.size %>
+					<%= link_to "Upvote", like_poll_option_path(po), method: :put %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+	<%= link_to "Delete this poll", poll, method: :delete %>
+	<% end %>

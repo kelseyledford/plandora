@@ -14,7 +14,7 @@ class PollOptionsController < ApplicationController
 	def create
 		@poll_option= @poll.poll_options.new(poll_option_params)
 		if @poll_option.save
-			redirect_to poll_path(@poll)
+			redirect_to group_polls_path(@poll.group)
 		else
 			render :new
 		end
@@ -32,6 +32,11 @@ class PollOptionsController < ApplicationController
 		else
 			render :edit
 		end
+	end
+
+	def destroy
+		@poll.destroy
+		redirect_to group_polls_path(@poll.group)
 	end
 
 	def upvote

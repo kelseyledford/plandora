@@ -14,6 +14,10 @@
 			</tr>
 		<% end %>
 	</table>
+	<%= link_to "New poll option", new_poll_poll_option_path(poll) %>
+	<br>
 	<%= link_to "Delete this poll", poll, method: :delete %>
 <% end %>
 </div>
+<br>
+<%= link_to "New poll topic", new_group_poll_path(@group, @poll) %>
