@@ -71,7 +71,7 @@ textarea {
 }
 
 .group_show_info {
-	height: 85%;
+	height: 92%;
 	width: 80%;
 	border: 5px solid black;
 	margin: 0 auto;
@@ -99,57 +99,17 @@ textarea {
 	margin-left: 20px;
 }
 
-.view_directions, .edit_group_link, .new_poll, .view_polls, .view_chat {
-	border: 2px solid white;
-	color: black;
-	height: 45px;
-	width: 120px;
-	text-align: center;
-	border-radius: 20px;
-	margin-top: 5px;
-}
-
-.view_directions {
-	background-color: black;
-}
-
-.edit_group_link {
-	background-color: yellow;
-}
-
-.new_poll {
-	background-color: red;
-}
-
-.view_polls {
-	background-color: pink;
-}
-
-.view_chat {
-	background-color: orange;	
-}
-
-.group_nav {
-	margin-left: 5px;
-}
-
-.group_nav a {
-	margin-top: 5px;
-	text-decoration: none;
-	color: black;
-	font-weight: bolder;
-}
 
 /****** Media Queries ******/
 
 @media (max-width: 700px) {
 
 	.group_show_container {
-		width: 80%;
+		width: 100%;
 	}
 	.group_show_info {
-		height: 80%;
-		padding: 0 10px 0 10px;
+		height: 90%;
+		padding: 5px 10px 5px 10px;
 		overflow: scroll;
 	}
 	.group_name h1 {
@@ -161,11 +121,12 @@ textarea {
 @media (max-width: 370px) {
 
 	.group_show_container {
-		height: 90%;
+		height: 100%;
+		width: 100%;
+		padding: 10px;
 	}
 
 	.group_show_info {
-		margin-left: -10px !important;
-		width: 108%;
+		width: 100%;
 	}
 }
