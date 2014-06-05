@@ -9,7 +9,7 @@
 </div>
 <script type ="text/javascript">
   handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {zoom: 14, provider_key: "AIzaSyBnugBXbtHJ6qqIyILKqKPQ1l2rafKtjx0"}, internal: {id: 'map'}}, function(){
+  handler.buildMap({ provider: {zoom: 14}, internal: {id: 'map'}}, function(){
     markers = handler.addMarker(
       {
         lat: <%= @direction.latitude %>,
@@ -20,7 +20,7 @@
       lat: <%= @direction.latitude %>,
       lng: <%= @direction.longitude %>
     });
-  });
+  });r
 </script>
 
 <%= link_to "Update these directions", edit_group_direction_path(@group) %>
