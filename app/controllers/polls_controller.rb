@@ -36,7 +36,7 @@ class PollsController < ApplicationController
 
 	def destroy
 		@poll.destroy
-		redirect_to group_polls_path(@poll.group)
+		redirect_to :back	
 	end
 
 	private

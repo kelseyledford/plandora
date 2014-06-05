@@ -35,7 +35,7 @@ class PollOptionsController < ApplicationController
 	end
 
 	def destroy
-		@poll.destroy
+		@poll_option.destroy
 		redirect_to group_polls_path(@poll.group)
 	end
 

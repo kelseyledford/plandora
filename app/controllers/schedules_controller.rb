@@ -1,7 +1,7 @@
 class SchedulesController < ApplicationController
 
 	before_action :set_group, :only => [:index, :create, :new]
-	before_action :set_schedule, :only => [:show, :edit, :update]
+	before_action :set_schedule, :only => [:show, :edit, :update, :destroy]
 
 	def index
 		@schedules = @group.schedules
@@ -12,9 +12,6 @@ class SchedulesController < ApplicationController
 
 	def new
 		@schedule = Schedule.new
-		6.times do
-			plans = @schedule.plans.build
-		end
 	end
 
 	def create
@@ -37,10 +34,15 @@ class SchedulesController < ApplicationController
 		end
 	end
 
+	def destroy
+		@schedule.destroy
+		redirect_to :back
+	end
+
 	private
 
 	def schedule_params
-		params.require(:schedule).permit(:date, plans_attributes: [:id, :activity, :activity_time])
+		params.require(:schedule).permit(:date)
 	end
 
 	def set_group

@@ -1,7 +1,7 @@
 class PlansController < ApplicationController
 
 	before_action :set_schedule, :only => [:index, :create, :new]
-	before_action :set_plan, :only => [:show, :edit, :update]
+	before_action :set_plan, :only => [:show, :edit, :update, :destroy]
 
 	def index
 		@plan = @schedule.plans
@@ -14,7 +14,7 @@ class PlansController < ApplicationController
 	def create
 		@plan = @schedule.plans.new(plan_params)
 		if @plan.save
-			redirect_to plan_path(@plan)
+			redirect_to group_schedules_path(@schedule.group)
 		else
 			render :new
 		end
@@ -32,6 +32,11 @@ class PlansController < ApplicationController
 		else
 			render :edit
 		end
+	end
+
+	def destroy
+		@plan.destroy
+		redirect_to :back
 	end
 
 	private
