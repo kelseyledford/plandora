@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140603193713) do
+ActiveRecord::Schema.define(version: 20140604230919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,16 @@ ActiveRecord::Schema.define(version: 20140603193713) do
 
   add_index "groups", ["theme_id"], name: "index_groups_on_theme_id", using: :btree
 
+  create_table "plans", force: true do |t|
+    t.string   "activity"
+    t.integer  "schedule_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.time     "activity_time"
+  end
+
+  add_index "plans", ["schedule_id"], name: "index_plans_on_schedule_id", using: :btree
+
   create_table "poll_options", force: true do |t|
     t.string   "option"
     t.datetime "created_at"
@@ -71,6 +81,15 @@ ActiveRecord::Schema.define(version: 20140603193713) do
   end
 
   add_index "polls", ["group_id"], name: "index_polls_on_group_id", using: :btree
+
+  create_table "schedules", force: true do |t|
+    t.string   "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "group_id"
+  end
+
+  add_index "schedules", ["group_id"], name: "index_schedules_on_group_id", using: :btree
 
   create_table "themes", force: true do |t|
     t.datetime "created_at"

@@ -1,7 +1,7 @@
 class PollsController < ApplicationController
 
 	before_action :set_group, :only => [:index, :create, :new]
-	before_action :set_poll, :only => [:show, :edit, :update]
+	before_action :set_poll, :only => [:show, :edit, :update, :destroy]
 
 	def index
 		@polls = @group.polls
@@ -12,7 +12,6 @@ class PollsController < ApplicationController
 		4.times do
 			poll_options = @poll.poll_options.build
 		end
-		# @poll.poll_options.build
 	end
 
 	def create
@@ -31,17 +30,22 @@ class PollsController < ApplicationController
 	end
 
 	def update
-		if @poll.update(poll_params)
+		if @poll.update_attributes(poll_params)
 			redirect_to group_polls_path(@poll.group)
 		else
 			render :edit
 		end
 	end
 
+	def destroy
+		@poll.destroy
+		redirect_to group_polls_path(@poll.group)
+	end
+
 	private
 
 	def poll_params
-		params.require(:poll).permit(:topic, poll_options_attributes: [:option])
+		params.require(:poll).permit(:topic, poll_options_attributes: [:id, :option])
 	end
 
 	def set_group

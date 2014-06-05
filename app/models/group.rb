@@ -18,5 +18,6 @@ class Group < ActiveRecord::Base
   belongs_to :theme
   has_one :direction
   has_many :polls
+  has_many :schedules
 
 end

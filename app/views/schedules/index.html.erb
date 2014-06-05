@@ -1,0 +1,20 @@
+<h1>Itinerary</h1>
+
+<% @group.schedules.each do |schedule| %>
+	<h3><%= schedule.date %></h3>
+	<table border='1'>
+		<th><%= link_to 'Time', :sort => 'time' %></th>
+		<th>Activity</th>
+		<% schedule.plans.each do |plan| %>
+			<tr>
+				<td><%= plan.activity_time.try(:strftime, "%l:%M%P") %></td>
+				<td><%= plan.activity %></td>
+			</tr>
+		<% end %>
+	</table>
+	<%= link_to 'Edit', edit_schedule_path(schedule) %>
+	<br>
+	<%= link_to 'Add an activity', new_schedule_plan_path(@group, @schedule, @plan) %>
+<% end %>
+<br><br>
+<%= link_to 'New Date', new_group_schedule_path(@group, @schedule) %>
