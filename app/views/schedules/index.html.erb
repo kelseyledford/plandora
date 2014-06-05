@@ -1,0 +1,27 @@
+<h1>Itinerary</h1>
+
+<% @group.schedules.each do |schedule| %>
+	<h3><%= schedule.date %></h3>
+	<table border='1'>
+
+		<th>Time</th>
+		<th>Activity</th>
+		<th>Delete</th>
+
+		<% schedule.plans.each do |plan| %>
+			<tr>
+				<td><%= plan.activity_time.try(:strftime, "%l:%M%P") %></td>
+				<td><%= plan.activity %></td>
+				<td><%= link_to plan, method: :delete do %><span class='glyphicon glyphicon-remove'></span><% end %>
+			</tr>
+		<% end %>
+
+	</table>
+	<%= link_to 'Add an activity', new_schedule_plan_path(schedule, @plan) %>
+	<%= link_to 'Edit Date', edit_schedule_path(schedule) %><br>
+	<%= link_to 'Delete Day', schedule, method: :delete %><br>
+
+<% end %>
+
+<br><br>
+<%= link_to 'New Date', new_group_schedule_path(@group, @schedule) %>

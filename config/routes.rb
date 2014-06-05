@@ -4,7 +4,14 @@ Plandora::Application.routes.draw do
     resource :direction
     resource :chat
     resources :polls, shallow: true do
-      resources :poll_options
+      resources :poll_options do
+        member do
+          put 'like', to: 'poll_options#upvote'
+        end
+      end
+    end
+    resources :schedules, shallow: true do
+      resources :plans
     end
   end
   resources :welcome
