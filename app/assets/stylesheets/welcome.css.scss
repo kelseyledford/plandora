@@ -1,6 +1,5 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+
 
 .welcome_container {
 	margin-top: 50px;
@@ -96,34 +95,25 @@ header {
 
 }
 
-
-
-
 @media (max-width: 600px) {
-
 	header {
 		font-size: 55px;
 	}
-
 	#plandoralogoshrink {
 		height: 200px;
 	}
-
 	.what_is_plandora {
 		height: 300px;
 		width: 300px;
 	}
-
 	.features_info_container {
 		height: 300px;
 		width: 300px;
 	}
-
 	.features_info {
 		height: 260px;
 		width: 280px;
 	}
-	
 	.what_is_plandora_info {
 		height: 250px;
 		width: 280px;
@@ -131,6 +121,5 @@ header {
 		text-align: center;
 		margin: 60px 0 0 4px;
 	}
-
 }
 

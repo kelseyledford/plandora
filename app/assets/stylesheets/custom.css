@@ -1,3 +1,8 @@
+
+@import "bootstrap";
+
+/****** Navbar and Footer ******/
+
 .navbar-inverse, .navbar-nav > li > a {
 	color: black !important;
 	font-weight: bolder;
@@ -26,6 +31,104 @@
 	color: black;
 	font-size: 15px;
 	font-weight: bold;
+}
+
+
+footer, .navbar-custom {
+	background-color: #99CCFF;
+	opacity: 0.9;
+}
+
+#user-widget {
+	text-decoration: none;
+	padding-bottom: 4px;
+}
+
+#user-widget li a:link, a:visited, a:active {
+	text-decoration: none;
+	color: black;
+}
+
+#about_nav a:link, a:visited, a:active{
+	text-decoration: none;
+	color: black;
+}
+
+footer {
+	color: black;
+	font-size: 14px;
+	text-align: center;
+	border-top: 1px solid black;
+	position:fixed;
+	padding-top: 10px;
+    height:50px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom: -5px;
+}
+
+.contact:hover, .user-widget:hover, .about_nav:hover, .tutorial_nav:hover {
+	color: black;
+	font-size: 15px;
+	font-weight: bolder;
+	cursor: pointer;
+}
+
+.contactgroup {
+	border: 10px double black;
+	border-radius: 5px;
+	font-size: 15px;
+	background-color: lightgrey;
+	color: black;
+	padding: 10px;
+}
+
+.contactgroup a:link, a:visited, a:active {
+	text-decoration: none;
+	color: darkblue;
+}
+
+.contactgroup a:hover {
+
+}
+
+#kelsey, #dean, #charly {
+	font-size: 16px;
+	text-align: center;
+}
+
+.contact_images {
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	border: 5px solid black;
+	border-radius: 100px;
+}
+
+.contact_charly {
+	width: 690px;
+	height: auto;
+	transform: rotate(260deg);
+	-ms-transform:rotate(260deg); /* IE 9 */
+	-webkit-transform:rotate(260deg); /* Opera, Chrome, and Safari */
+	margin-left: -260px;
+	margin-top: 80px;
+}
+
+.contact_dean {
+	
+	width: 190px;
+	height: auto;
+	margin-left: -50px;
+	margin-top: -10px ;
+}
+
+.contact_kelsey {
+	
+	width: 160px;
+	height: auto;
+	margin-left: -20px;
 }
 
 

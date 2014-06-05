@@ -3,7 +3,9 @@ Plandora::Application.routes.draw do
   resources :groups do
     resource :direction
     resource :chat
-    resources :polls
+    resources :polls, shallow: true do
+      resources :poll_options
+    end
   end
   resources :welcome
   resources :users

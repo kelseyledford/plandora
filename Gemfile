@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+	source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
@@ -7,6 +7,7 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk'
 gem 'gmaps4rails'
 gem "geocoder"
+gem 'acts_as_votable', '~> 0.9.0'
 
 # Use postgresql as the database for Active Record
 gem 'pg'

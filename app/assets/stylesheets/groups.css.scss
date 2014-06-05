@@ -1,34 +1,149 @@
-// Place all the styles related to the groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
 
-
-
-.group_form {
- 	border: 3px solid black;
- 	border-radius: 20px;
- 	height: 700px;
- 	width: 550px;
- 	margin: 0 auto;
- 	color: black;
- 	font-size: 18px;
- 	background-image: url('');
-	background-size: 100%;
+body {
+	background: url('packing.jpg');
 	background-repeat: none;
 }
 
-.new_group_header {
-
+.btn-default {
+	background-color: black;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	width: 55%;
+	border-radius: 12px;
 }
 
-.new_group {
-	height: 100%;
-	width: 80%;
+/****** Group New ******/
+
+.new_group_header {
+	color: white;
+}
+
+.new_group_container, .edit_group_container  {
+	height: 780px;
+	width: 70%;
 	margin: 0px auto;
 	margin-top: 60px;
 	text-align: center;	
 }
 
+/****** Group Form ******/
+
+.group_form {
+ 	border: 10px solid white;
+ 	border-radius: 20px;
+ 	height: 80%;
+ 	margin: 0 auto;
+ 	
+ 	font-size: 18px;
+	background-color: rgba(0,0,0,.76);
+	padding: 15px;
+	color: white;
+}
+
 textarea {
    resize: none;
 }
+
+/****** Group Edit ******/
+
+.edit_group_header {
+	text-align: center;
+	color: white;
+	display: block;
+	margin-top: 60px;
+}
+
+
+.edit_group {
+	width: 80% !important;
+	margin: 0 auto;
+}
+
+/****** Group Show ******/
+
+
+.group_show_container {
+	height: 470px;
+	width: 800px;
+	margin: 0 auto;
+}
+
+.group_show_info {
+	height: 400px;
+	width: 80%;
+	border: 5px solid black;
+	margin: 0 auto;
+	background-color: white;
+	color: black;
+	margin-top: 70px;
+	border-radius: 40px;
+}
+
+.group_name {
+	text-align: center;
+}
+
+.group_image {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.group_description {
+	margin-left: 20px;
+}
+
+.group_members {
+	margin-left: 20px;
+}
+
+.view_directions, .edit_group_link, .new_poll, .view_polls, .view_chat {
+	border: 2px solid white;
+	color: black;
+	height: 45px;
+	width: 120px;
+	text-align: center;
+	border-radius: 20px;
+	margin-top: 5px;
+}
+
+.view_directions {
+	background-color: black;
+}
+
+.edit_group_link {
+	background-color: yellow;
+}
+
+.new_poll {
+	background-color: red;
+}
+
+.view_polls {
+	background-color: pink;
+}
+
+.view_chat {
+	background-color: orange;	
+}
+
+.group_nav {
+	margin-left: 5px;
+}
+
+.group_nav a {
+	margin-top: 5px;
+	text-decoration: none;
+	color: black;
+	font-weight: bolder;
+}
+
+/****** Media Queries ******/
+
+@media (max-width: 600px) {
+
+
+
+}
+

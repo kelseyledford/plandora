@@ -1,11 +1,12 @@
-<h1>All Polls</h1>
-<% @group.polls.each do |poll| %>
-	<%= poll.topic %>
-	<ul>
-		<li><%= poll.option1 %></li>
-		<li><%= poll.option2 %></li>
-		<li><%= poll.option3 %></li>
-		<li><%= poll.option4 %></li>
-		<li><%= poll.option5 %></li>
-	</ul>
-<% end %>
+<h1>All Polls for this group</h1>
+
+<table border="1">
+	<% @group.polls.each do |poll| %>
+	<th><%= poll.topic %></th>
+	<% poll.poll_options.each do |po| %>
+		<tr>
+			<td><%= po.option %></td>
+		</tr>
+	<% end %>
+	<% end %>
+</table>
