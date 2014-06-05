@@ -1,9 +1,11 @@
 <h1>Home#index</h1>
-<%= time_tag Time.now do %>
 
-<% end %>
 <!-- This displays instagram pictures on the home page in standard resolution -->
 <% @instagram.each do |instagram| %>
 
 	<%= image_tag instagram.images.standard_resolution.url %>
+	
+	<%# if photo.videos %>
+		<!-- <a href="<%# photo.videos.standard_resolution.url %>" target="_blank">Play Video</a> -->
+	<%# end %>
 <% end %>

@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+
+<script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+<script type="text/javascript">
+$(document)ready(function() {
+    $(".fancybox").fancybox();
+});
+</script>
+
+<p id="notice"><%= notice %></p>
+<img src="/images/IMG_8276.jpg"/>
+<a class="fancybox" rel="group" href="IMG_8276.jpg"><img src="IMG_8276.jpg"/></a>
+<p>
+
+  <strong>Name:</strong>
+  <%= @tag.name %>
+</p>
+
+<% @photos.each do |photo| %>
+
+	
+	<li>
+		<div class="image_info row">
+			<!-- username, user image, time posted, add to album button -->
+			<div class="image_header col-sm-4">
+				<div class="image_ig" id='blowup'><%= image_tag photo.images.standard_resolution.url %></div>
+
+				<!-- <%# image_tag photo.user.profile_picture, id: "avatar" %>
+					<cite><a href="http://instagram.com/<%# photo.user.username %>" target="_blank"><%# photo.user.username %></a></cite> -->
+				<%# distance_of_time_in_words(Time.now, Time.at(photo.created_time.to_i),include_seconds: true) %> 
+				<% if photo.videos %>
+					<a href="<%= photo.videos.standard_resolution.url %>" target="_blank">Play Video</a>
+				<% end %>
+			</div>
+			<!-- caption -->
+	<div class="image_footer">
+	<div class="ig_caption"><%# truncate(photo.caption.text, length: 100) if photo.caption %> </div>
+	<div>
+	<a class="fullscreen fs"><span class="glyphicon glyphicon-fullscreen"></span></a>
+	</div>
+	</div>
+		</div>
+	</li>
+<% end %>
+</div>
+
+<% else %>
+<!-- <h1 class="title"> 
+    <p class="header">Beam</p>
+</h1> -->
+	<div class="logo-container"></div>
+
+
+<!-- This displays instagram pictures on the home page in standard resolution -->
+<%# @instagram.each do |instagram| %>
+	<%#= image_tag instagram.images.standard_resolution.url %>
+<%# end %>
+
+<%= link_to 'Edit', edit_tag_path(@tag) %> |
+<%= link_to 'Back', tags_path %>

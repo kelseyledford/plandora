@@ -1,5 +1,8 @@
 Plandora::Application.routes.draw do
 
+  get "posts/index"
+  resources :tags
+
   get "home/index"
   resources :groups
 
