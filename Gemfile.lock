@@ -81,9 +81,6 @@ GEM
       faraday_middleware (>= 0.8, < 0.10)
       hashie (>= 0.4.0)
       multi_json (~> 1.0, >= 1.0.3)
-    jbuilder (1.5.3)
-      activesupport (>= 3.0.0)
-      multi_json (>= 1.2.0)
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -192,9 +189,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 3.1.0)
-  coffee-rails (~> 4.0.0)
-  instagram
   active_model_serializers
   acts_as_votable (~> 0.9.0)
   angularjs-rails
@@ -206,11 +200,12 @@ DEPENDENCIES
   figaro
   geocoder
   gmaps4rails
+  instagram
   jquery-rails
   omniauth-facebook (= 1.4.0)
   paperclip!
   pg
-  pry (~> 0.9.12.6)
+  pry
   rails (= 4.0.4)
   rspec-rails
   sass-rails (~> 4.0.2)
