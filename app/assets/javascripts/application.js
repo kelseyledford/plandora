@@ -15,9 +15,32 @@
 //= require underscore
 //= require gmaps/google
 //= require bootstrap
+//= require angular
+//= require angular-resource
 //= require_tree .
 
 
+
+// Bookmarklet function
+$(function () {
+
+  //grab the entire query string
+  var query = document.location.search.replace('?', '');
+
+  //extract each field/value pair
+  query = query.split('&');
+
+  //run through each pair
+  for (var i = 0; i < query.length; i++) {
+
+    //split up the field/value pair into an array
+    var field = query[i].split("=");
+
+    //target the field and assign its value
+    $("input[name='" + field[0] + "'], select[name='" + field[0] + "']").val(decodeURIComponent(field[1]));
+
+  }
+});
 
 
 $(document).ready(function() {

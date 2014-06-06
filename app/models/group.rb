@@ -19,5 +19,7 @@ class Group < ActiveRecord::Base
   has_one :direction
   has_many :polls
   has_many :schedules
+  has_many :links
+  has_many :packing_items
 
 end

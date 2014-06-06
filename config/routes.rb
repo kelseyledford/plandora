@@ -13,9 +13,12 @@ Plandora::Application.routes.draw do
     resources :schedules, shallow: true do
       resources :plans
     end
+    resources :packing_items, shallow: true
+    resources :links
   end
   resources :welcome
   resources :users
+
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]

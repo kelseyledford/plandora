@@ -1,15 +1,6 @@
 Plandora::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_credentials => {
-      :bucket => ENV['Plandora'],
-      :access_key_id => ENV['AKIAJFF5W6LGVMO36YQQ'],
-      :secret_access_key => ENV['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']
-    }
-  }
-
   # Code is not reloaded between requests.
   config.cache_classes = true
 
