@@ -1,1 +1,71 @@
 @import "bootstrap";
+
+/****** Direction New ******/
+
+.direction_new_container {
+	height: 700px;
+	width: 700px;
+	margin: 0 auto;
+	margin-top: 60px;
+}
+
+.direction_new_header {
+	height: 150px;
+	width: 420px;
+	border: 10px solid black;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 10px;
+}
+
+.direction_new_header h1 {
+	font-size: 60px;
+	margin-top: -5px;
+	font-family: 'Qwigley', cursive;;
+}
+
+/****** Direction Form ******/
+
+
+.direction_form {
+	margin: 0 auto;
+	border: 15px solid black;
+	height: 60%;
+	width: 80%;
+	overflow: scroll;
+	border-radius: 20px;
+	padding: 15px;
+}
+
+textarea {
+   resize: none;
+}
+
+
+
+/****** Direction Show ******/
+
+.direction_show_container {
+	height: 800px;
+	width: 800px;
+	margin: 0 auto;
+	overflow: scroll;
+	margin-top: 20px;
+	border: 2px solid black;
+	background-color: black;
+}
+
+.direction_show_header {
+	height: 200px;
+	width: 200px;
+	border: 2px solid black;
+	background-color: black;
+}
+
+.direction_show_address {
+	height: 300px;
+	width: 300px;
+	overflow: scroll;
+	border: 2px solid black;
+	background-color: black;
+}
