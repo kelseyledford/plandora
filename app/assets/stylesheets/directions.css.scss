@@ -1,27 +1,34 @@
+
 @import "bootstrap";
+
+body {
+	background: url();
+}
 
 /****** Direction New ******/
 
 .direction_new_container {
-	height: 700px;
+	height: 720px;
 	width: 700px;
 	margin: 0 auto;
 	margin-top: 60px;
 }
 
 .direction_new_header {
-	height: 150px;
+	height: 140px;
 	width: 420px;
 	border: 10px solid black;
 	margin: 0 auto;
 	text-align: center;
 	border-radius: 10px;
+	background-image: linear-gradient( #60E3F7, #8BF7E5);
 }
 
 .direction_new_header h1 {
-	font-size: 60px;
-	margin-top: -5px;
-	font-family: 'Qwigley', cursive;;
+	font-size: 90px;
+	margin-top: 10px;
+	font-family: 'Qwigley', cursive;
+	font-weight: bolder;
 }
 
 /****** Direction Form ******/
@@ -30,17 +37,51 @@
 .direction_form {
 	margin: 0 auto;
 	border: 15px solid black;
-	height: 60%;
+	height: 80%;
 	width: 80%;
 	overflow: scroll;
-	border-radius: 20px;
-	padding: 15px;
+	border-radius: 30px;
+	padding: 25px;
 }
+.direction_form ul li {
+	list-style-type: none;
+}
+.direction_form ul {
 
+}
+#direction_details {
+	font-size: 20px;
+}
 textarea {
    resize: none;
+   border-radius: 10px;
+   border: 5px solid black;
+}
+.destination_form_inputs {
+	border: 5px solid black;
+	padding: 5px;
+	width: 92%;
+	border-radius: 10px;
+	margin: 5px 0;
+}
+.direction_submit {
+	margin-top: 5px;
+	height: 50px;
+	width: 92%;
+	font-size: 20px;
+	font-color: black;
+	font-family: arial;
+	border: 8px solid black;
+	background-color: lightblue;
+	border-radius: 5px;
 }
 
+.direction_submit:hover {
+	background-color: rgba(10,200,200,.7);
+	font-weight: bolder;
+	border-bottom-color: darkgrey;
+	border-right-color: darkgrey;
+}
 
 
 /****** Direction Show ******/
@@ -68,4 +109,67 @@ textarea {
 	overflow: scroll;
 	border: 2px solid black;
 	background-color: black;
+}
+
+
+@media (max-width: 400px) {
+
+/****** Direction New + Form ******/
+	.direction_new_container {
+		height: 360px;
+		width: 300px;
+	}
+	.direction_new_header {
+		height: 35px;
+		width: 110%;
+		border: 3px solid black;
+		margin-top: -5px;
+	}
+	.direction_new_header h1 {
+		font-size: 30px;
+	}
+
+	.direction_form {
+	border: 3px solid black;
+	height: 80%;
+	width: 100%;
+	overflow: scroll;
+	border-radius: 30px;
+	padding: 25px;
+	}
+	.direction_form ul li {
+		list-style-type: none;
+	}
+	.direction_form ul {
+
+	}
+	#direction_details {
+		font-size: 20px;
+	}
+	textarea {
+	   resize: none;
+	   border-radius: 10px;
+	   border: 5px solid black;
+	}
+	.destination_form_inputs {
+		border: 5px solid black;
+		padding: 5px;
+		width: 92%;
+		border-radius: 10px;
+		margin: 2px 0;
+	}
+	.direction_submit {
+		margin-top: 5px;
+		height: 50px;
+		width: 92%;
+		font-size: 20px;
+		font-color: black;
+		font-family: arial;
+		border: 8px solid black;
+		background-color: lightblue;
+		border-radius: 5px;
+	}
+
+
+
 }

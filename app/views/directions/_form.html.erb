@@ -1,13 +1,14 @@
 <!-- URL has to be specified directly in the form as a workaround for a long-standing bug with forms for singular resources -->
 <div class="direction_form">
-	<%= form_for @direction, :url => group_direction_path(@group) do |f| %> <br />
-		<%= f.text_field :name, placeholder: 'Destination', label: 'Destination Name' %> <br />
-		<%= f.text_field :street, placeholder: 'Address', label: 'Address' %> <br />
-		<%= f.text_field :city, placeholder: 'City', label: 'City' %> <br />
-		<%= f.text_field :state, placeholder: 'State', label: 'CA' %> <br />
-		<%= f.text_field :zip, placeholder: 'Zip', label: 'Zip' %> <br />
-		<%= f.label 'Details' %> <br />
-		<%= f.text_area :details, {size: '30x7'} %> <br />
-		<%= f.submit %>
+	<ul>
+		<li><%= form_for @direction, :url => group_direction_path(@group) do |f| %></li> 
+		<li><%= f.text_field :name, placeholder: 'Destination', label: 'Destination Name', class: "destination_form_inputs" %></li> 
+		<li><%= f.text_field :street, placeholder: 'Address', label: 'Address', class: "destination_form_inputs" %></li> 
+		<li><%= f.text_field :city, placeholder: 'City', label: 'City', class: "destination_form_inputs" %></li> 
+		<li><%= f.text_field :state, placeholder: 'State', label: 'CA', class: "destination_form_inputs" %></li> 
+		<li><%= f.text_field :zip, placeholder: 'Zip', label: 'Zip', class: "destination_form_inputs" %></li> 
+		<li id="direction_details">Details</li> 
+		<li><%= f.text_area :details, {size: '42x5'}%></li> 
+		<li class="direction_button"><%= f.submit class: "direction_submit" %></li>
 	<% end %>
 </div>
