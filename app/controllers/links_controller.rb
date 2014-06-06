@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
 
-	before_action :set_group, :only => [:index, :create, :new, :edit, :update, :destroy]
+	before_action :set_group, :only => [:index, :edit, :update, :destroy, :new, :create]
 	before_action :set_link, :only => [:show, :edit, :update, :destroy]
 
 	def index
@@ -42,7 +42,7 @@ class LinksController < ApplicationController
 	private
 
 	def link_params
-		params.require(:link).permit(:title, :url)
+		params.require(:link).permit(:title, :url, :group_id)
 	end
 
 	def set_group

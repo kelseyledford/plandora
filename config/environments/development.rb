@@ -1,15 +1,6 @@
 Plandora::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # config.paperclip_defaults = {
-  #   :storage => :s3,
-  #   :bucket => ENV['Plandora'],
-  #   :s3_credentials => {
-  #     :access_key_id => ENV['AKIAJFF5W6LGVMO36YQQ'],
-  #     :secret_access_key => ENV['9qix5nBCVK8V+9NZtx9McaUaYNscVaxViyVdR0XR']
-  #   }
-  # }
-
   Paperclip.options[:command_path] = "/usr/local/bin/"
 
   # In the development environment your application's code is reloaded on
