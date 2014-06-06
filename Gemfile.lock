@@ -61,6 +61,9 @@ GEM
     execjs (2.1.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     geocoder (1.2.1)
     gmaps4rails (2.1.2)
     hashie (2.1.1)
@@ -183,6 +186,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.1.1)
   bootstrap_form
   coffee-rails (~> 4.0.0)
+  figaro
   geocoder
   gmaps4rails
   jbuilder (~> 1.2)
