@@ -1,0 +1,5 @@
+<%= form_for [@group, @schedule, @plan] do |f| %>
+	<%= f.text_field :activity, placeholder: 'Activity', label: 'Activity' %>
+	<%= f.time_field :activity_time, label: 'Time' %>
+	<%= f.submit %>
+<% end %>

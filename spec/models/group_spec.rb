@@ -4,6 +4,9 @@ describe Group do
   describe 'data model relationships' do
   	it { should have_many(:users) }
 		it { should have_many(:user_groups) }
+    it { should belong_to(:theme) }
+    it { should have_many(:polls) }
+    it { should have_one(:direction) }
 		it { should have_db_column(:name) }
 		it { should have_db_column(:description) }
     it { should belong_to(:theme) }

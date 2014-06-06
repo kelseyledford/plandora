@@ -1,0 +1,16 @@
+<div class="group_form">
+	<%= bootstrap_form_for(@group) do |f| %>
+		<%= f.text_field :name, label: 'Group Name' %>
+		<%= f.text_area :description, {size: '30x7'} %>
+		<%= f.label 'Trip Type' %> 
+		<%= collection_select :group, :theme, Theme.all, :id, :name %><br />
+		<%= f.file_field :avatar %>
+	<br />
+	<p>Group Members:<p>
+		<%= collection_check_boxes :group, :user_ids, User.all, :id, :name %>
+		<br />
+		<p>Features:</p>
+		<br />
+		<%= f.submit 'Submit' %>
+	<% end %>
+</div>

@@ -5,6 +5,25 @@ Plandora::Application.routes.draw do
 
   get "home/index"
   resources :groups
+  resources :groups do
+    resource :direction
+    resource :chat
+    resources :polls, shallow: true do
+      resources :poll_options do
+        member do
+          put 'like', to: 'poll_options#upvote'
+        end
+      end
+    end
+    resources :schedules, shallow: true do
+      resources :plans
+    end
+    resources :packing_items, shallow: true
+    resources :links
+  end
+  resources :welcome
+  resources :users
+
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]

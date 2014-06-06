@@ -1,0 +1,12 @@
+<h1>Poll Show Page</h1>
+
+<table border="1">
+	<th><%= @poll.topic %></th>
+	<% @poll.poll_options.each do |po| %>
+	<tr>
+		<td><%= po.option %></td>
+	</tr>
+	<% end %>
+</table>
+
+<%= link_to 'Edit', edit_poll_path(@poll) %>

@@ -13,7 +13,5 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
-/tmp
-
-/app/assets/javascripts/facebook.js.coffee
-/config/initializers/omniauth.rb
+# Ignore application configuration
+/config/application.yml
