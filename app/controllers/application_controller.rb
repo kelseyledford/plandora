@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 	
 	before_action :set_groups
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+
   private
 
   def set_groups

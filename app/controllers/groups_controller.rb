@@ -1,5 +1,8 @@
 class GroupsController < ApplicationController
 
+	load_and_authorize_resource :group
+	skip_authorize_resource :group, only: [:create]
+
 	def index
 		@groups = Group.all
 	end

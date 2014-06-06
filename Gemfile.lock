@@ -47,6 +47,7 @@ GEM
       sass (~> 3.2)
     bootstrap_form (2.1.1)
     builder (3.1.4)
+    cancancan (1.8.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.4)
@@ -200,6 +201,7 @@ DEPENDENCIES
   aws-sdk
   bootstrap-sass (~> 3.1.1)
   bootstrap_form
+  cancancan (~> 1.8)
   coffee-rails (~> 4.0.0)
   figaro
   geocoder

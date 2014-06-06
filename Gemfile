@@ -10,6 +10,7 @@ gem "geocoder"
 gem 'acts_as_votable', '~> 0.9.0'
 gem 'pry'
 gem 'figaro'
+gem 'cancancan', '~> 1.8'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
