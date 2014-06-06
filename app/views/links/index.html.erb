@@ -1,6 +1,6 @@
 <h1>Ideas</h1>
-
 <% if @group.links %>
+
 	<% @group.links.each do |l| %>
 		<h4><%= l.title %></h4>
 		<a><%= link_to nil, l.url %></a>
@@ -11,4 +11,4 @@
 
 <p>Bookmarklet<p>
 <p>Drag the following link to your bookmarks bar in order to save websites to this page</p>
-<a href="javascript:(function(){var newURI='http://localhost:3000/groups/3/links/new?link[url]='+encodeURIComponent(decodeURIComponent(window.location.href))+'&link[title]='+encodeURIComponent(document.title.replace('%20',' ')); window.location.href=newURI;})();">Plandora</a>
+<a href="javascript:(function(){var newURI='http://localhost:3000/groups/<%= @group.id %>/links/new?link[url]='+encodeURIComponent(decodeURIComponent(window.location.href))+'&link[title]='+encodeURIComponent(document.title.replace('%20',' ')); window.location.href=newURI;})();"><%= @group.name %></a>

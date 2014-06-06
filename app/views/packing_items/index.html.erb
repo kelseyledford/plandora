@@ -1,1 +1,19 @@
 <h1>Packing List</h1>
+
+ <div x-ng-app='plandora-app'>
+   <div x-ng-controller="PackingItemCtrl">
+   	<table>
+   		<tr ng-repeat='item in packingItems'>
+   			<td>{{item.name}}</td>
+   		</tr>
+   	</table>
+
+	 <h3>Add something to pack:</h3>
+	 <form ng-submit="savePackingItem();">
+	 	<label for="name">Name:</label>
+	 	<input ng-model="newPackingItem.name" name="name" class="form-control">
+      <input type="submit" value="Add New Item!">
+	 </form>
+
+   </div>
+ </div>

@@ -15,7 +15,10 @@
 //= require underscore
 //= require gmaps/google
 //= require bootstrap
+//= require angular
+//= require angular-resource
 //= require_tree .
+
 
 
 // Bookmarklet function
