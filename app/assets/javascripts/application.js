@@ -10,15 +10,19 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require jquery
 //= require jquery_ujs
 //= require underscore
 //= require gmaps/google
 //= require bootstrap
+//= require bootstrap/modal
 //= require angular
 //= require angular-resource
 //= require_tree .
 
+
+$('.carousel').carousel()
 
 
 // Bookmarklet function
@@ -60,3 +64,5 @@ $(document).ready(function() {
 
 
 });
+
+
