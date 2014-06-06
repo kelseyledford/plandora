@@ -11,7 +11,7 @@
   <%= stylesheet_link_tag "custom" %>
   <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Qwigley' %>
 </head>
-<body>
+<body>					
 
 <div id="loading_img"></div>
 
@@ -26,45 +26,30 @@
 		        <span class="icon-bar"></span>
       		</button>
       		<!-- <a class="navbar-brand" href="#scrollplandora" id="scrollplandora"/>Plandora</a> -->
-		</div>
+			</div>
     	<!-- Collect the nav links, forms, and other content for toggling -->
     	<div class="collapse navbar-collapse navbar-custom" id="bs-example-navbar-collapse-1">
     		<ul class="nav navbar-nav navbar-right">
-		        <% if current_user %>
-		         	<li class="dropdown">
-		  				<a data-toggle="dropdown" href="#">Groups<b class="caret"></b></a>
+		      <% if current_user %>
+		        <li class="dropdown">
+		  			<a data-toggle="dropdown" href="#">Groups<b class="caret"></b></a>
 		  				<ul class="dropdown-menu" role="menu">
-		  					<% @groups.each do |group| %>
+		  					<% current_user.groups.each do |group| %>
 			    				<li class="group_name_list"><%= link_to group.name, group %></li>
 			    				<li role="presentation" class="divider"></li>
-	  						<% end %>
-	    				<li class="add_group_style"><%= link_to "+ Add New Group", new_group_path %></li>
-	    				<li role="presentation" class="divider"></li>
-	  					</ul>
-					</li>
-			        <li class="user-widget">
-			      		 <%= link_to "Sign out", signout_path, id: "sign_out" %>
-			        </li>
-<<<<<<< HEAD
-		        <% else %>
-=======
-			    <li class="dropdown">
-  				<a data-toggle="dropdown" href="#">Groups<b class="caret"></b></a>
-  				<ul class="dropdown-menu" role="menu">
-  					<% current_user.groups.each do |group| %>
-    				<li><%= link_to group.name, group %></li>
-    			<li role="presentation" class="divider"></li>
-  					<% end %>
-    			<li><%= link_to "Add New Group", new_group_path %></li>
-  				</ul>
-				</li>
-		         <% else %>
->>>>>>> d9ae5d03c946cf9fe569b7d184737828d19671b2
+		  					<% end %>
+	    					<li class="add_group_style"><%= link_to "+ Add New Group", new_group_path %></li>
+							</ul>
+						</li>	
+			      <li class="user-widget">
+			      	<%= link_to "Sign out", signout_path, id: "sign_out" %>
+			      </li>
+		      <% else %>
 		        	<li class="user-widget">
 		        		<%= link_to "Facebook Login", "/auth/facebook", id: "sign_in" %>
-		   			</li>
+		   				</li>
 		   		<% end %>
-         	</ul>
+        </ul>
     	</div><!-- /.navbar-collapse -->
   	</div><!-- /.container-fluid -->
 </nav>
