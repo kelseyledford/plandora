@@ -2,6 +2,7 @@ class LinksController < ApplicationController
 
 	before_action :set_group, :only => [:index, :edit, :update, :destroy, :new, :create]
 	before_action :set_link, :only => [:show, :edit, :update, :destroy]
+	load_and_authorize_resource :group
 
 	def index
 		@links = @group.links

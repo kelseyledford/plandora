@@ -2,6 +2,7 @@ class SchedulesController < ApplicationController
 
 	before_action :set_group, :only => [:index, :create, :new]
 	before_action :set_schedule, :only => [:show, :edit, :update, :destroy]
+	load_and_authorize_resource :group
 
 	def index
 		@schedules = @group.schedules

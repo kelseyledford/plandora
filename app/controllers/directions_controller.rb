@@ -2,6 +2,7 @@ class DirectionsController < ApplicationController
 
 	before_action :set_group
 	before_action :set_direction, :only => [:create, :show, :edit, :update]
+	load_and_authorize_resource :group
 
 	def show
 	end

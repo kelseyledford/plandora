@@ -2,7 +2,10 @@ class PackingItemsController < ApplicationController
 
 	before_action :set_group
 	before_action :set_packing_item, :only => [:show, :edit, :update, :destroy]
+	load_and_authorize_resource :group
+	
 	respond_to :json, :html
+
 	def index
 		@packing_items = @group.packing_items
 		respond_with @packing_items
