@@ -16,3 +16,7 @@
 //= require bootstrap
 //= require bootstrap/modal
 //= require_tree .
+
+$('.carousel').carousel()
+
+
