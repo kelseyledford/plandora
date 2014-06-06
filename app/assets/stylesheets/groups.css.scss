@@ -5,21 +5,13 @@ body {
 	background-repeat: none;
 }
 
-.btn-default {
-	background-color: black;
-	color: white;
-	font-weight: bold;
-	font-size: 20px;
-	width: 55%;
-	border-radius: 12px;
-}
 
 /****** Group New ******/
+
 
 .new_group_header {
 	color: white;
 }
-
 .new_group_container, .edit_group_container  {
 	height: 780px;
 	width: 70%;
@@ -28,7 +20,9 @@ body {
 	text-align: center;	
 }
 
+
 /****** Group Form ******/
+
 
 .group_form {
  	border: 10px solid white;
@@ -41,12 +35,21 @@ body {
 	padding: 15px;
 	color: white;
 }
-
 textarea {
    resize: none;
 }
+.btn-default {
+	background-color: black;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	width: 55%;
+	border-radius: 12px;
+}
+
 
 /****** Group Edit ******/
+
 
 .edit_group_header {
 	text-align: center;
@@ -54,11 +57,24 @@ textarea {
 	display: block;
 	margin-top: 60px;
 }
-
-
 .edit_group {
 	width: 80% !important;
 	margin: 0 auto;
+}
+
+
+/****** Group Features Nav ******/
+
+.group_features_nav {
+	display: block;
+}
+
+.group_features_nav button {
+	height: 40px;
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+	margin-top: -10px;
 }
 
 /****** Group Show ******/
@@ -69,7 +85,6 @@ textarea {
 	width: 90%;
 	margin: 0 auto;
 }
-
 .group_show_info {
 	height: 92%;
 	width: 80%;
@@ -81,23 +96,21 @@ textarea {
 	border-radius: 40px;
 	padding: 10px 50px;
 }
-
 .group_name {
 	text-align: center;
 }
-
 .group_image {
 	margin: 0 auto;
 	text-align: center;
 }
-
 .group_description {
 	margin-left: 20px;
 }
-
 .group_members {
 	margin-left: 20px;
 }
+
+
 
 
 /****** Media Queries ******/
@@ -118,12 +131,13 @@ textarea {
 	}
 }
 
-@media (max-width: 370px) {
+@media (max-width: 400px) {
 
 	.group_show_container {
-		height: 100%;
+		height: 435px;
 		width: 100%;
 		padding: 10px;
+		margin-top: -15px;
 	}
 
 	.group_show_info {

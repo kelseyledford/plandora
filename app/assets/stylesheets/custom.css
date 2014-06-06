@@ -35,7 +35,7 @@
 
 
 footer, .navbar-custom {
-	background-color: #99CCFF;
+	background-color: rgba(100,140,240,.9);
 	opacity: 0.9;
 }
 
@@ -133,9 +133,10 @@ footer {
 
 @media (max-width: 400px) {
 	footer {
-		position: relative;
 		font-size: 12px;
+		position: relative;
 	}
+
 	.contact_images {
 		width: 100px;
 		height: 100px;

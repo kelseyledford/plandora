@@ -1,27 +1,4 @@
-<div class="group_show_container">
-	
-	<div class="group_show_info">
-		<div class="group_name">
-			<h1><%= @group.name %></h1>
-		</div>
-		<div class="group_image">
-			<% if @group.avatar_file_name %>
-				<%= image_tag @group.avatar.url %>
-			<% end %>
-		</div>
-		<div class="group_description">
-			   <%= @group.description %>
-		</div>
-		<div class="group_members">
-			<p>Group Members:</p>
-			<ul>
-				<% @group.users.each do |user| %>
-				<li><%= user.name %></li>
-				<% end %>
-			</ul>
-		</div>
-		
-	<div class="btn-group">
+<div class="btn-group group_features_nav">
 		<button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Features<span class="caret"></span></button>
 		<ul class="dropdown-menu">
 			<li class="view_directions">
@@ -47,4 +24,27 @@
 	</div>
 
 
+<div class="group_show_container">
+	<div class="group_show_info">
+		<div class="group_name">
+			<h1><%= @group.name %></h1>
+		</div>
+		<div class="group_image">
+			<% if @group.avatar_file_name %>
+				<%= image_tag @group.avatar.url %>
+			<% end %>
+		</div>
+		<div class="group_description">
+			   <%= @group.description %>
+		</div>
+		<div class="group_members">
+			<p>Group Members:</p>
+			<ul>
+				<% @group.users.each do |user| %>
+				<li><%= user.name %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
 
