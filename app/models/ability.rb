@@ -28,7 +28,8 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/bryanrite/cancancan/wiki/Defining-Abilities
-
-    can :manage, Group, users: { id: user.id }
+    if user != nil
+        can :manage, Group, users: { id: user.id }
+    end
   end
 end

@@ -17,6 +17,7 @@ describe Direction do
 		it { should have_db_column(:zip) }
 		it { should have_db_column(:latitude) }
 		it { should have_db_column(:longitude) }
+		it { should have_db_column(:group_id) }
 		it { should belong_to(:group) }
 	end
 	describe '#address' do
