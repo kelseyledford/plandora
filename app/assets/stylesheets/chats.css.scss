@@ -19,8 +19,21 @@
 	font-family: 'Qwigley', cursive;
 	font-size: 70px;
 }
-
-.composer {
+#u_0_2 {
 	border: none !important;
 	background-color: none !important;
+}
+
+@media (max-width: 480px) {
+	.chat_container {
+		width: 100%;
+		height: 420px;
+		border: none;
+	}
+	.chat_header {
+		font-size: 40px;
+	}
+	#u_0_2 {
+		width: 300px !important;
+	}
 }

@@ -5,7 +5,7 @@
 
 .navbar-inverse, .navbar-nav > li > a {
 	font-family: sans-serif;
-	color: rgb(100,0,200) !important;
+	color: darkblue !important;
 	font-size: 20px;
 }
 
@@ -25,9 +25,8 @@
 	font-size: 15px;
 	font-weight: bold;
 }
-footer, .navbar-custom, .navbar-header {
+footer, .navbar-custom, .navbar-header, #groups_background{
 	background-color: rgb(100,180,240);
-	opacity: 1;
 }
 #user-widget {
 	text-decoration: none;
@@ -110,7 +109,6 @@ footer {
 	color: black !important;
 	font-weight: bolder !important;
 }
-
 .dropdown-menu {
 	opacity: 1 !important;
 }
@@ -128,10 +126,10 @@ footer {
 		border-radius: 100px;
 	}
 	.contact_charly {
-	width: 210px;
-	height: auto;
-	margin-left: -70px;
-	margin-top: -27px;
+		width: 210px;
+		height: auto;
+		margin-left: -70px;
+		margin-top: -27px;
 	}
 	.contact_dean {
 		width: 130px;
