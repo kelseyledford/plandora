@@ -7,6 +7,10 @@ describe Link do
 		it { should have_db_column(:group_id) }
 		it { should belong_to(:group) }
 	end
+	# describe 'validations' do
+	# 	it { should validate_presence_of(:url) }
+	# 	it { should validate_presence_of(:title) }
+	# end
 	let (:improper_url_attributes) {{
 		:title => 'Google',
 		:url => 'www.google.com'
