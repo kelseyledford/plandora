@@ -1,9 +1,11 @@
 require 'spec_helper'
 
-describe GroupsController do
+describe GroupsController, :type => :controller do
 	let(:valid_attributes) {{
 		:name => 'Vegas',
-		:description => 'turn up'}}
+		:description => 'turn up',
+		:user_ids => [] 
+	}}
 	describe 'GET index' do
 		before do
 			@group1 = Group.create! valid_attributes

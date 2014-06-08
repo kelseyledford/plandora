@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
 
-	load_and_authorize_resource :except => [:new, :create]
+	# load_and_authorize_resource :except => [:new, :create]
 
 	def index
 		@groups = Group.all

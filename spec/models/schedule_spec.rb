@@ -1,5 +1,13 @@
 require 'spec_helper'
 
-RSpec.describe Schedule, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Schedule do
+	describe 'data model relationships' do
+		it { should belong_to (:group) }
+		it { should have_many(:plans).dependent(:destroy) }
+		it { should have_db_column(:date) }
+		it { should have_db_column(:group_id) }
+	end
+	describe 'nested attributes' do
+		it { should accept_nested_attributes_for(:plans).allow_destroy(true) }
+	end
 end

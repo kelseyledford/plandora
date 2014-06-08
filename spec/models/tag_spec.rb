@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe Tag do
-  pending "add some examples to (or delete) #{__FILE__}"
+	describe 'data model relationships' do
+		it { should have_many(:posts) }
+		it { should have_db_column(:name) }
+	end
 end
