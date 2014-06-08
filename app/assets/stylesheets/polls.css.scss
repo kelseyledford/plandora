@@ -6,34 +6,40 @@
 .subheader {
 	font-weight: bold;
 }
-
 .table-div {
 	width: 50%;
 	margin-left: 25%;
 }
-
 .table-header {
 	text-align: center;
 	font-size: 1.25em;
 }
-
 .poll-options {
 	width: 50%;
 	display: inline;
 }
-
 .new-poll-option {
 	float: left;
 	padding-left: 15%;
 }
-
 .delete-poll {
 	float: right;
 	padding-right: 15%;
 }
-
 .new-poll{
 	clear: both;
 	margin-bottom: 10%;
 	font-size: 1.15em;
+}
+
+@media (max-width: 320px) {
+	.poll-body{
+		height: 380px;
+	}
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+	.poll-body{
+		height: 220px;
+	}
 }
