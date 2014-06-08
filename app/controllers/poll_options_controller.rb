@@ -2,8 +2,7 @@ class PollOptionsController < ApplicationController
 
 	before_action :set_poll, :only => [:index, :create, :new]
 	before_action :set_poll_option, :only => [:show, :edit, :update, :upvote]
-	load_and_authorize_resource :poll
-	load_and_authorize_resource :poll_option, :through => :poll
+	load_and_authorize_resource :group
 
 	def index
 		@poll_options = @poll.poll_options

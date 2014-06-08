@@ -1,24 +1,37 @@
-<h1>All Polls for this group</h1>
+<div class="container poll-body">
+<h1>Polls</h1>
 
-<div>
+<div class='table-div'>
 	<% @group.polls.each do |poll| %>
-	<table border="1">
-		<th><%= poll.topic %></th>
+	<table class="table table-bordered table-condensed table-hover table-responsive">
+		<th colspan="3" class='table-header'><%= poll.topic %></th>
+		<tr>
+			<td class='subheader'>Option</td>
+			<td class='subheader'>Votes</td>
+			<td class='subheader'>Upvote</td>
+		</tr>
 		<% poll.poll_options.each do |po| %>
-			<tr>
-				<td>
-					<%= po.option %>
-					<%= po.get_likes.size %>
-					<%= link_to "Upvote", like_poll_option_path(po), method: :put %>
-				</td>
-			</tr>
+		<tr>
+			<td><%= po.option %></td>
+			<td><%= po.get_likes.size %></td>
+			<td><%= link_to like_poll_option_path(po), method: :put do%><span class="glyphicon glyphicon-chevron-up"></span><% end %></td>
+		</tr>
 		<% end %>
 	</table>
-	<%= link_to "New poll option", new_poll_poll_option_path(poll) %>
-	<br>
-	<%= link_to "Delete this poll", poll, method: :delete %>
+	<div class="poll-options">
+		<div class="new-poll-option">
+			<span class="glyphicon glyphicon-star"></span>
+			<%= link_to "New Option", new_poll_poll_option_path(poll) %>
+		</div>
+		<div class="delete-poll">
+			<span class="glyphicon glyphicon-star"></span>
+			<%= link_to "Delete this Poll", poll, method: :delete %>
+		</div>
+	</div>
+	<br><br>
 <% end %>
 </div>
-<br>
-<%= link_to "New poll topic", new_group_poll_path(@group, @poll) %>
-<p>b<br>b<br>b<br>b<br></p>
+<div class='new-poll'>
+	<%= link_to "New Poll", new_group_poll_path(@group, @poll) %>
+</div>
+</div>

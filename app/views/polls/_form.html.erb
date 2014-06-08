@@ -1,8 +1,4 @@
  <%= form_for [@group, @poll] do |f| %>
 	<%= f.text_field :topic, placeholder: 'Topic', label: 'Topic' %>
-	<%= f.fields_for :poll_options do |ff| %>
-		<%= ff.label :option %>
-		<%= ff.text_field :option %>
-	<% end %>
-	<%= f.submit %>
+	<%= f.submit 'Submit' %>
 <% end %>

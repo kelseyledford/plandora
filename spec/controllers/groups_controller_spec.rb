@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe GroupsController, :type => :controller do
+	before do
+    @partneruser = User.create!(role_id: 3, email: 'pineapple@gmail.com', password:'12345678')
+    sign_in @partneruser
+  end
 	let(:valid_attributes) {{
 		:name => 'Vegas',
 		:description => 'turn up',
