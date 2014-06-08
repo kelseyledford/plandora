@@ -119,12 +119,11 @@ textarea {
 .group_image {
 	margin: 0 auto;
 	text-align: center;
-	border: 1px solid black;
 	height: auto;
 	width: 300px;
+	margin-top: 30px;
 }
 .group_description, .group_members {
-	border: 1px solid black;
 	height: 200px;
 	overflow: scroll;
 }
@@ -183,7 +182,7 @@ textarea {
 	}
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
 
 	.new_group_header {
 		height: 30px;
@@ -260,6 +259,10 @@ textarea {
 	}
 	.btn-primary {
 		width: 100%;
+	}
+	.group_name h1{
+		font-size: 40px;
+		margin-top: 0;
 	}
 	
 }

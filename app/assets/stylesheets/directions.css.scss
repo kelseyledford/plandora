@@ -147,7 +147,7 @@ textarea {
 	width: 100%;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
 
 /****** Direction New + Form ******/
 
@@ -215,6 +215,43 @@ textarea {
 		border-radius: 5px;
 	}
 
+	/****** Direction Show ******/
+
+	.direction_show_container {
+		width: 100%;
+		border: none;
+	}
+	.direction_show_info {
+		border: none;
+	}
+	.direction_show_header {
+		border: none;
+		margin-top: -10px;	
+	}
+	.direction_show_header h1 {
+		font-size: 45px;
+	}
+	.direction_show_address {
+		margin-top: -30px;
+	}
+	.direction_show_address h3, .direction_show_details h3 {
+		font-size: 16px;
+	}
+	.direction_show_address p {
+		font-size: 14px;
+	}
+	.direction_update_link {
+		width: 70%;
+		padding: 5px 20px;
+		height: 30px;
+	}
+	.direction_update_link a {
+		font-size: 13px;
+		height: auto;
+	}
+	.direction_show_details p {
+		font-size: 14px;
+	}
 
 
 }
