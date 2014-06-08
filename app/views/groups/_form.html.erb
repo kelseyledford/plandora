@@ -10,8 +10,6 @@
 	<p class="group_members_list">Group Members:<br />
 		<%= collection_check_boxes :group, :user_ids, User.all, :id, :name %></p>
 		<br />
-		<p class="group_features_list">Features:</p>
-		<br />
 		<%= f.submit 'Submit' %>
 	<% end %>
 </div>
