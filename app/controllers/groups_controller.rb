@@ -1,10 +1,6 @@
 class GroupsController < ApplicationController
 
-	# load_and_authorize_resource :except => [:new, :create]
-
-	def index
-		@groups = Group.all
-	end
+	load_and_authorize_resource :except => [:new, :create]
 
 	def show
 		@group = Group.find(params[:id])
@@ -12,12 +8,13 @@ class GroupsController < ApplicationController
 
 	def new
 		@group = Group.new
+		@hide_features_nav = true
 	end
 
 	def create
 		@group = Group.new(group_params)
 		if @group.save
-			redirect_to groups_path
+			redirect_to group_path(@group)
 		else
 			render :new
 		end
@@ -30,7 +27,7 @@ class GroupsController < ApplicationController
 	def update
 		@group = Group.find(params[:id])
 		if @group.update(group_params)
-			redirect_to groups_path
+			redirect_to group_path(@group)
 		else
 			render :edit
 		end
