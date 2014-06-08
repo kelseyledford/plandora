@@ -7,7 +7,11 @@ class Group < ActiveRecord::Base
 			:medium => "300x300>", 
 			:thumb => "100x100>" },
 		  :storage => :s3,
-  		:s3_credentials => "#{Rails.root}/config/s3.yml",
+  		:s3_credentials => {
+        access_key_id: ENV['ACCESS_KEY_ID'],
+        secret_access_key: ENV['SECRET_ACCESS_KEY'],
+        bucket: 'Plandora'
+      },
   		:path => ":attachment/:id/:style.:extension",
   		:bucket => "Plandora",
 			:default_url => "/images/:style/missing.png"
