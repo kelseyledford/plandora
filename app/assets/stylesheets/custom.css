@@ -4,22 +4,20 @@
 /****** Navbar ******/
 
 .navbar-inverse, .navbar-nav > li > a {
-	color: black !important;
-	font-weight: bolder;
+	font-family: sans-serif;
+	color: rgb(100,0,200) !important;
+	font-size: 20px;
 }
-.navbar-inverse .navbar-nav > li > a:hover{
-	color: black !important;
-	font-weight: bolder;
-}
+
 .navbar-inverse .navbar-brand {
 	color: black !important;
-	font-weight: bolder;
+	
 }
 .plandoralogo {
 	 position:fixed;
      left: 8px;
      top: 2px;
-     width:150px;
+     width:50px;
      z-index:20000;
 }
 .plandoralogo a:link, a:visited, a:active {
@@ -27,8 +25,8 @@
 	font-size: 15px;
 	font-weight: bold;
 }
-footer, .navbar-custom {
-	background-color: rgba(100,180,240,.85);
+footer, .navbar-custom, .navbar-header {
+	background-color: rgb(100,180,240);
 	opacity: 1;
 }
 #user-widget {
@@ -61,7 +59,7 @@ footer {
     right:0px;
     margin-bottom: -5px;
 }
-.contact:hover, .user-widget:hover, .about_nav:hover, .tutorial_nav:hover {
+.contact:hover, .about_nav:hover, .tutorial_nav:hover {
 	color: black;
 	font-weight: bolder;
 	cursor: pointer;
@@ -76,7 +74,6 @@ footer {
 }
 .contactgroup a:link, a:visited, a:active {
 	text-decoration: none;
-	color: darkblue;
 }
 #kelsey, #dean, #charly {
 	font-size: 16px;

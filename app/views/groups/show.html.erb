@@ -1,7 +1,6 @@
-<div class="group_show_container">
-	<div class="btn-group group_features_nav">
-		<button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Features<span class="caret"></span></button>
-		<ul class="dropdown-menu">
+<div class="btn-group group_features_nav">
+		<button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-md">Features<span class="caret"></span></button>
+		<ul class="dropdown-menu" role="menu">
 			<li class="view_directions">
 				<% unless @group.direction %>
 					<%= link_to "New Directions", new_group_direction_path(@group) %>
@@ -23,13 +22,11 @@
 			</li>
 		</ul>
 	</div>
-
-
-
-<div class="group_name">
-		<h1><%= @group.name %></h1>
-</div>
-	<div class="group_show_info">
+<div class="group_show_container">
+	<div class="group_show_info">	
+		<div class="group_name">
+				<h1><%= @group.name %></h1>
+		</div>
 		<div class="group_image">
 			<% if @group.avatar_file_name %>
 				<%= image_tag @group.avatar.url %>
@@ -40,10 +37,10 @@
 			   <%= @group.description %>
 		</div>
 		<div class="group_members">
-			<p>Group Members:</p>
+			<strong><p>Group Members</p></strong>
 			<ul>
 				<% @group.users.each do |user| %>
-				<li><%= user.name %></li>
+				<li class="group_members_names"><%= user.name %></li>
 				<% end %>
 			</ul>
 		</div>

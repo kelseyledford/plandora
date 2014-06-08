@@ -17,32 +17,46 @@ body {
 
 /****** Group New ******/
 
-
 .new_group_header {
-	color: white;
+	height: 120px;
+	width: 420px;
+	border: 10px solid black;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 10px;
+	
+}
+.new_group_header h1 {
+	font-size: 70px;
+	margin-top: 10px;
+	font-family: 'Qwigley', cursive;
+	font-weight: bolder;
 }
 .new_group_container, .edit_group_container  {
 	height: 780px;
-	width: 70%;
+	width: 80%;
 	margin: 0px auto;
 	margin-top: 60px;
 	text-align: center;	
 }
 
-
 /****** Group Form ******/
 
-.group_members_list, .group_features_list {
+.group_members_list {
 	overflow: scroll;
+	border-radius: 10px;
+	height: 80px;
 }
-
+.group_members_list label {
+	padding: 1px 5px;
+	margin: 1px 3px;
+}
 .group_form {
- 	border: 10px solid white;
  	border-radius: 20px;
  	height: 80%;
  	margin: 0 auto;
  	font-size: 18px;
-	background-color: rgba(0,0,0,.80);
+	background-color: rgba(0,0,0,.90);
 	padding: 15px;
 	color: white;
 }
@@ -54,10 +68,9 @@ textarea {
 	color: white;
 	font-weight: bold;
 	font-size: 20px;
-	width: 70%;
+	width: 65%;
 	border-radius: 12px;
 }
-
 
 /****** Group Edit ******/
 
@@ -78,14 +91,20 @@ textarea {
 
 
 .group_show_container {
-	height: 650px;
+	height: auto;
 	width: 90%;
 	margin: 0 auto;
 	padding-bottom: 40px;
 	background-color: white;
+	margin-top: 60px;
 }
 .group_name {
 	text-align: center;
+	font-family: 'Qwigley', cursive;
+}
+.group_name h1 {
+	font-size: 70px;
+	font-weight: bold;
 }
 .group_show_info {
 	height: 92%;
@@ -104,26 +123,47 @@ textarea {
 	height: auto;
 	width: 300px;
 }
-.group_description {
-	margin-left: 20px;
+.group_description, .group_members {
 	border: 1px solid black;
 	height: 200px;
 	overflow: scroll;
+}
+.group_description {
+	margin-top: 20px;
+	text-align: center;
+	font-size: 18px;
 }
 .group_members {
-	margin-left: 20px;
-	border: 1px solid black;
-	height: 200px;
-	overflow: scroll;
+	margin-top: 10px;
 }
-
+.group_members p {
+	text-align: center;
+	font-size: 20px;
+}
+.group_members ul li {
+	list-style-type: none;
+}
 .btn-group {
-	height: 40px;
-	width: 100%;
-	margin: 0 auto;
+	font-size: 20px;
+	position: fixed !important;
+	margin-left: 50px;
+	margin-top: -270px;
+	z-index: 600000;
+	font-family: sans-serif;
 }
-
-
+.group_features_nav button {
+	font-size: 20px;
+	height: 50px;
+	background-color: rgba(100,180,240,.85);
+	border: none;
+	color: darkblue;
+}
+.group_features_nav li {
+	width: 220px !important;
+}
+.group_features_nav li a:hover {
+	background-color: lightblue !important;
+}
 
 /****** Media Queries ******/
 
@@ -145,21 +185,42 @@ textarea {
 
 @media (max-width: 400px) {
 
+	.new_group_header {
+		height: 30px;
+		width: 100%;
+		border: 0px solid black;
+		border-radius: 0px;
+		margin: 0 auto;
+		text-align: center;
+		background-image: linear-gradient( #60E3F7, #8BF7E5);
+		margin-top: -10px;
+	}
 	.new_group_header h1 {
-		font-size: 23px;
+		font-size: 35px;
+		margin-top: -6px;
+		color: black;
 	}
 	.new_group_container {
 		width: 100%;
-		height: 360px;
+		height: 380px;
+	}
+	.group_members_list {
+		overflow: scroll;
+		border-radius: 10px;
+		height: 80px;
+		width: 100%;
+	}
+	.group_members_list label {
+		padding: 1px 5px;
+		margin: 1px 3px;
 	}
 	.group_form {
 		width: 100%;
 		overflow: scroll;
-		height: 330px;
-		border: 4px solid white;
-		margin-top: -5px;
+		height: 355px;
+		margin-top: -3px;
+		border-radius: 0px;
 	}
-
 	.btn-default {
 		background-color: black;
 		color: white;
@@ -169,17 +230,35 @@ textarea {
 		border-radius: 12px;
 	}
 
-
 	/***** Group show ******/
 
 	.group_show_container {
-		height: 435px;
+		height: 430px;
 		width: 100%;
-		padding: 10px;
-		margin-top: -15px;
 	}
-
 	.group_show_info {
+		width: 100%;
+		height: 95%;
+		border: none;
+		margin-top: 15px;
+	}
+	.group_image img {
+		height: auto;
+		width: 100%;
+	}
+	.group_description{
+		margin: 0 auto;
+		text-align: center;
+		height: auto;
+	}
+	.group_members {
+		height: auto;
+		margin: 0 auto;
+	}
+	.group_members p {
+		text-align: center;
+	}
+	.btn-primary {
 		width: 100%;
 	}
 	

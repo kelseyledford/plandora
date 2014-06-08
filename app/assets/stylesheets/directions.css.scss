@@ -2,7 +2,6 @@
 @import "bootstrap";
 
 body {
-	background: url();
 }
 
 /****** Direction New ******/
@@ -13,17 +12,15 @@ body {
 	margin: 0 auto;
 	margin-top: 60px;
 }
-
 .direction_new_header {
 	height: 140px;
 	width: 420px;
-	border: 10px solid black;
+	border: 5px solid black;
 	margin: 0 auto;
 	text-align: center;
 	border-radius: 10px;
 	background-image: linear-gradient( #60E3F7, #8BF7E5);
 }
-
 .direction_new_header h1 {
 	font-size: 90px;
 	margin-top: 10px;
@@ -33,10 +30,9 @@ body {
 
 /****** Direction Form ******/
 
-
 .direction_form {
 	margin: 0 auto;
-	border: 15px solid black;
+	border: 5px solid black;
 	height: 80%;
 	width: 80%;
 	overflow: scroll;
@@ -46,11 +42,9 @@ body {
 .direction_form ul li {
 	list-style-type: none;
 }
-.direction_form ul {
-
-}
 #direction_details {
 	font-size: 20px;
+	width: 92%;
 }
 textarea {
    resize: none;
@@ -59,62 +53,104 @@ textarea {
 }
 .destination_form_inputs {
 	border: 5px solid black;
-	padding: 5px;
+	padding: 8px;
 	width: 92%;
 	border-radius: 10px;
 	margin: 5px 0;
 }
 .direction_submit {
-	margin-top: 5px;
+	margin-top: 15px;
 	height: 50px;
 	width: 92%;
 	font-size: 20px;
 	font-color: black;
 	font-family: arial;
-	border: 8px solid black;
+	border: 3px solid black;
 	background-color: lightblue;
 	border-radius: 5px;
 }
-
 .direction_submit:hover {
-	background-color: rgba(10,200,200,.7);
+	background-color: rgba(139, 255, 250, 1);
 	font-weight: bolder;
 	border-bottom-color: darkgrey;
 	border-right-color: darkgrey;
 }
 
-
 /****** Direction Show ******/
 
 .direction_show_container {
-	height: 800px;
+	height: auto;
 	width: 800px;
 	margin: 0 auto;
 	overflow: scroll;
-	margin-top: 20px;
-	border: 2px solid black;
-	background-color: black;
+	margin-top: 60px;
+	border: 3px solid black;
+	background-color: white;
+	text-align: center;
+	border-radius: 10px;
+}
+.direction_show_container p {
+	font-size: 22px;
 }
 
 .direction_show_header {
-	height: 200px;
-	width: 200px;
-	border: 2px solid black;
-	background-color: black;
+	padding-top: 5px;
+	font-family: 'Qwigley', cursive;
+	text-align: center;
+	height: 90px;
+	width: auto;
+	border-bottom: 2px solid black;
+	background-color: white;
 }
-
+.direction_show_header h1 {
+	margin: 0px;
+	font-size: 70px;
+	font-weight: bolder;
+}
 .direction_show_address {
-	height: 300px;
-	width: 300px;
+	height: auto;
+	width: 100%;
+	font-size: 20px;
 	overflow: scroll;
+	background-color: white;
+	padding-bottom: 10px;
+}
+.direction_update_link {
+	margin: 0 auto;
+	background-color: lightblue;
+	height: 50px;
+	width: 300px;
+	padding: 10px 20px;
+	border-radius: 10px;
+	border: 2px solid grey;
+}
+.direction_update_link a {
+	text-decoration: none;
+	font-weight: bolder;
+	font-size: 18px;
+	color: black;
+}
+.direction_update_link:hover {
 	border: 2px solid black;
-	background-color: black;
+}
+.direction_update_link a:hover {
+	text-decoration: none;
+	font-weight: bolder;
+	color: black;
+}
+.direction_show_details {
+	margin-top: -20px;
 }
 
+#map {
+	border-top: 1px solid black;
+	width: 100%;
+}
 
 @media (max-width: 400px) {
 
 /****** Direction New + Form ******/
+
 	.direction_new_container {
 		height: 400px;
 		width: 300px;
@@ -122,7 +158,7 @@ textarea {
 	.direction_new_header {
 		height: 35px;
 		width: 107%;
-		border: 5px solid black;
+		border: none;
 		margin-top: -10px;
 		margin-left: -10px;
 		border-radius: 0;
@@ -134,8 +170,8 @@ textarea {
 	}
 
 	.direction_form {
-		border: 3px solid black;
-		height: 95%;
+		border: none;
+		height: 92%;
 		width: 105%;
 		overflow: scroll;
 		border-radius: 30px;
@@ -151,6 +187,7 @@ textarea {
 	}
 	#direction_details {
 		font-size: 15px;
+		width: 100%;
 	}
 	textarea {
 	   resize: none;
