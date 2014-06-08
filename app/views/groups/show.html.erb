@@ -1,27 +1,3 @@
-<div class="btn-group group_features_nav">
-		<button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-md">Features<span class="caret"></span></button>
-		<ul class="dropdown-menu" role="menu">
-			<li class="view_directions">
-				<% unless @group.direction %>
-					<%= link_to "New Directions", new_group_direction_path(@group) %>
-				<% else %>
-					<%= link_to "Directions", group_direction_path(@group, @direction) %>
-				<% end %>
-			</li>
-			<li class="view_chat">
-				<%= link_to "Chat", group_chat_path(@group, @chat) %>
-			</li>
-			<li class="view_polls"> 
-				<%= link_to "Polls", group_polls_path(@group) %> 
-			</li>
-			<li class="new_poll"> 
-				<%= link_to "New Poll", new_group_poll_path(@group) %>
-			</li>
-			<li class="edit_group_link">
-				<%= link_to "Edit your group", edit_group_path(@group) %>
-			</li>
-		</ul>
-	</div>
 <div class="group_show_container">
 	<div class="group_show_info">	
 		<div class="group_name">
