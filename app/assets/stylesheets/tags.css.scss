@@ -1,6 +1,19 @@
 // Place all the styles related to the tags controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.tag_index_container {
+	border: 4px solid black;
+	margin: 0 auto;
+	width: 600px;
+	height: 450px;
+	margin-top: 70px;
+	text-align: center;
+	overflow: scroll;
+	border-radius: 30px;
+}
+
+
 body, html{
 	height: 100%;
 }
@@ -58,3 +71,4 @@ body, html{
 		}
 	}
 }
+
