@@ -1,6 +1,6 @@
-<h1>Editing tag</h1>
+<h1 class="text-center">Editing Tag</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', group_tag_path(@group, @tag) %> |
-<%= link_to 'Back', group_tags_path(@group) %>
+<%= link_to 'Show', group_tag_path(@group, @tag), class: "btn btn-info pull-left" %> 
+<%= link_to 'Back', group_tags_path(@group), class: "btn btn-info pull-left" %>

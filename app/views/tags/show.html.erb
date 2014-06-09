@@ -39,6 +39,6 @@
 	<%#= image_tag instagram.images.standard_resolution.url %>
 <%# end %>
 
-<%= link_to 'Edit', edit_group_tag_path(@group, @tag) %> |
-<%= link_to 'Back', group_tags_path(@group) %>
+<%= link_to 'Edit', edit_group_tag_path(@group, @tag), class: "btn btn-info pull-left" %> |
+<%= link_to 'Back', group_tags_path(@group), class: "btn btn-info pull-left" %>
 
