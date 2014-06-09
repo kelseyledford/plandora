@@ -96,11 +96,12 @@
 		}
 	}
 
-	.schedule_new_container {
+	.schedules_new_container {
 		width: auto;
 		margin-top: 50px;
 		height: 400px;
-		.schedule_new_header {
+		border: none;
+		.schedules_new_header {
 			h1 {
 				font-size: 45px;
 			}

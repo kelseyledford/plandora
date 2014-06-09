@@ -1,14 +1,18 @@
-<h1>Ideas</h1>
-<% if @group.links %>
+<div class="links_index_container">
+	<div class="links_index_header">
+		<h1>Ideas</h1>
+	</div>
+	<% if @group.links %>
 
-	<% @group.links.each do |l| %>
-		<h4><%= l.title %></h4>
-		<a><%= link_to nil, l.url %></a>
-		<p><%= link_to 'Edit', edit_group_link_path(@group, l) %></p>
-		<p><%= link_to 'Delete', group_link_path(@group, l), method: :delete %></p>
+		<% @group.links.each do |l| %>
+			<h4><%= l.title %></h4>
+			<a><%= link_to nil, l.url %></a>
+			<p><%= link_to 'Edit', edit_group_link_path(@group, l) %></p>
+			<p><%= link_to 'Delete', group_link_path(@group, l), method: :delete %></p>
+		<% end %>
 	<% end %>
-<% end %>
 
-<p>Bookmarklet<p>
-<p>Drag the following link to your bookmarks bar in order to save websites to this page</p>
-<a href="javascript:(function(){var newURI='http://localhost:3000/groups/<%= @group.id %>/links/new?link[url]='+encodeURIComponent(decodeURIComponent(window.location.href))+'&link[title]='+encodeURIComponent(document.title.replace('%20',' ')); window.location.href=newURI;})();"><%= @group.name %></a>
+	<p>Bookmarklet<p>
+	<p>Drag the following link to your bookmarks bar in order to save websites to this page</p>
+	<a href="javascript:(function(){var newURI='http://localhost:3000/groups/<%= @group.id %>/links/new?link[url]='+encodeURIComponent(decodeURIComponent(window.location.href))+'&link[title]='+encodeURIComponent(document.title.replace('%20',' ')); window.location.href=newURI;})();"><%= @group.name %></a>
+</div>
