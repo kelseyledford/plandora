@@ -15,8 +15,7 @@ class TagsController < ApplicationController
   def show
     tag = Tag.find(params[:id])
     # binding.pry
-    # @photos = Instagram.tag_recent_media('dog', {:count => 15})
-    @photos = Instagram.tag_recent_media("#{tag.name}", {:count => 4})
+    @photos = Instagram.tag_recent_media("#{tag.name}", {:count => 8})
   end
 
   # GET /tags/new
@@ -35,7 +34,7 @@ class TagsController < ApplicationController
 
     respond_to do |format|
      if @tag.save
-        @instagrams = Instagram.tag_recent_media(@tag.name.gsub(" ",""), {:count=>8})
+        @instagrams = Instagram.tag_recent_media(@tag.name.gsub(" ",""), {:count=> 8})
       # @instagrams.each do |post|
       #   text = post["caption"]["text"] rescue ""
       #   Post.save_post(@tag.id, text, post["user"]["profile_picture"], post["user"]["username"])
@@ -43,7 +42,7 @@ class TagsController < ApplicationController
      end
 
       if @tag.save
-        format.html { redirect_to group_tags_path(@tag.group), notice: 'Tag was successfully created.' }
+        format.html { redirect_to group_tags_path(@group, @tag), notice: 'Tag was successfully created.' }
         format.json { render json: @tag, status: :created, location: @tag }
       else
         format.html { render action: 'new' }
@@ -56,7 +55,7 @@ class TagsController < ApplicationController
   def update
     respond_to do |format|
        if @tag.update(tag_params)
-        format.html { redirect_to group_tags_path(@tag.group), notice: 'Tag was successfully updated.' }
+        format.html { redirect_to group_tags_path(@group, @tag), notice: 'Tag was successfully updated.' }
         format.json { head :no_content }
        else
         format.html { render group_tag_edit_path(@group, @tag) }
