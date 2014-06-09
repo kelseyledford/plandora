@@ -1,3 +1,9 @@
+<!-- <h1>Listing tags</h1> -->
+<% if flash[:notice] %>
+  <div class="alert alert-success"><%= flash[:notice] %></div>
+<% end %>
+
+<h1 class="text-center">Create Hash Tag</h1>
 <div class="tag_index_container">
   <div class="tag_index_header">
     <h1>Hashtags</h1>
@@ -5,6 +11,16 @@
 
   <p id="notice"><%= notice %> </p>
 
+<div class="well well-lg">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+        <th></th>
+     </tr>
+    </thead>
 
     <tbody>
       <% @tags.each do |tag| %>
@@ -16,6 +32,13 @@
         </tr>
       <% end %>
     </tbody>
+</table>
+</div>
+
+<br>
+<div class="text-center">
+<%= link_to 'New Tag', new_group_tag_path(@group), class: 'btn btn-default btn-lg' %>
+</div>
   </table>
 
   <br>

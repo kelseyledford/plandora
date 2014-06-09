@@ -1,16 +1,36 @@
+<div class= "well well-sm">
+
 <%= form_for [@group, @tag] do |f| %>
   <% if @tag.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@tag.errors.count, "error") %> prohibited this tag from being saved:</h2>
+      <h2><%= pluralize(@tag.errors.count, "error") %> prohibited this tag from being saved:
+      </h2>
 
-      <ul>
+      <ul class="list-group">
       <% @tag.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+       <li class="list-group-item list-group-item-danger">
+          <%= msg %>
+       </li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
+  <div class="row">
+    <div class="form-group col-sm-3">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+
+  <div class="row">
+    <div class="col-sm-3">
+      <%= f.submit 'Add', class: "btn btn-sm btn-success" %>
+    </div>
+
+<% end %>
+  </div>
+</div>
+</div>
   <div class="field">
     <%= f.text_field :name, placeholder: '#Hashtag' %>
   </div>
