@@ -24,20 +24,22 @@
       </div>
     </div>
 
-    <script type ="text/javascript">
-      handler = Gmaps.build('Google');
-      handler.buildMap({ provider: {zoom: 14, provider_key: "AIzaSyBnugBXbtHJ6qqIyILKqKPQ1l2rafKtjx0"}, internal: {id: 'map'}}, function(){
-        markers = handler.addMarker(
-          {
+    
+      <script type ="text/javascript">
+        handler = Gmaps.build('Google');
+        handler.buildMap({ provider: {zoom: 14, provider_key: "AIzaSyBnugBXbtHJ6qqIyILKqKPQ1l2rafKtjx0"}, internal: {id: 'map'}}, function(){
+          markers = handler.addMarker(
+            {
+              lat: <%= @direction.latitude %>,
+              lng: <%= @direction.longitude %>
+            }
+          );
+          handler.map.centerOn({
             lat: <%= @direction.latitude %>,
             lng: <%= @direction.longitude %>
-          }
-        );
-        handler.map.centerOn({
-          lat: <%= @direction.latitude %>,
-          lng: <%= @direction.longitude %>
+          });
         });
-      });
-    </script>
+      </script>
+    
   </div>
 </div>

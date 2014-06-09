@@ -67,7 +67,7 @@
     		<ul class="nav navbar-nav navbar-right">
 		      <% if current_user %>
 		        <li class="dropdown">
-		  			<a data-toggle="dropdown" href="#">Groups<b class="caret"></b></a>
+		  			<a data-toggle="dropdown" href="#" id="groups_background">Groups<b class="caret"></b></a>
 		  				<ul class="dropdown-menu" role="menu">
 		  					<% current_user.groups.each do |group| %>
 			    				<li class="group_name_list"><%= link_to group.name, group %></li>
