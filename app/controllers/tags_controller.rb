@@ -42,7 +42,7 @@ class TagsController < ApplicationController
      end
 
       if @tag.save
-        format.html { redirect_to group_tags_path(@tag.group), notice: 'Tag was successfully created.' }
+        format.html { redirect_to group_tags_path(@group, @tag), notice: 'Tag was successfully created.' }
         format.json { render json: @tag, status: :created, location: @tag }
       else
         format.html { render action: 'new' }
@@ -55,7 +55,7 @@ class TagsController < ApplicationController
   def update
     respond_to do |format|
        if @tag.update(tag_params)
-        format.html { redirect_to group_tags_path(@tag.group), notice: 'Tag was successfully updated.' }
+        format.html { redirect_to group_tags_path(@group, @tag), notice: 'Tag was successfully updated.' }
         format.json { head :no_content }
        else
         format.html { render group_tag_edit_path(@group, @tag) }
