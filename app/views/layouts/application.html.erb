@@ -40,7 +40,7 @@
 								</li>
 								<li class="view_directions">
 									<% unless @group.direction %>
-										<%= link_to "New Direction Page", new_group_direction_path(@group) %>
+										<%= link_to "Directions", new_group_direction_path(@group) %>
 									<% else %>
 										<%= link_to "Directions", group_direction_path(@group, @direction) %>
 									<% end %>

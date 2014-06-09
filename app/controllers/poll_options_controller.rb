@@ -10,9 +10,11 @@ class PollOptionsController < ApplicationController
 
 	def new
 		@poll_option= PollOption.new
+		@hide_features_nav  = true
 	end
 
 	def create
+		@hide_features_nav  = true
 		@poll_option= @poll.poll_options.new(poll_option_params)
 		if @poll_option.save
 			redirect_to group_polls_path(@poll.group)

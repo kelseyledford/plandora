@@ -24,14 +24,15 @@ body {
 	margin: 0 auto;
 	text-align: center;
 	border-radius: 10px;
+		h1 {
+		font-size: 70px;
+		margin-top: 10px;
+		font-family: 'Qwigley', cursive;
+		font-weight: bolder;
+	}
 	
 }
-.new_group_header h1 {
-	font-size: 70px;
-	margin-top: 10px;
-	font-family: 'Qwigley', cursive;
-	font-weight: bolder;
-}
+
 .new_group_container, .edit_group_container  {
 	height: 780px;
 	width: 80%;
@@ -46,11 +47,12 @@ body {
 	overflow: scroll;
 	border-radius: 10px;
 	height: 80px;
+		label {
+		padding: 1px 5px;
+		margin: 1px 3px;
+	}
 }
-.group_members_list label {
-	padding: 1px 5px;
-	margin: 1px 3px;
-}
+
 .group_form {
  	border-radius: 20px;
  	height: 80%;
@@ -80,9 +82,14 @@ textarea {
 
 .edit_group_header {
 	text-align: center;
-	color: white;
+	color: black;
 	display: block;
 	margin-top: 60px;
+	h1 {
+		font-size: 70px;
+		font-weight: bold;
+		font-family: 'Qwigley', cursive;
+	}
 }
 .edit_group {
 	width: 80% !important;
@@ -104,10 +111,10 @@ textarea {
 .group_name {
 	text-align: center;
 	font-family: 'Qwigley', cursive;
-}
-.group_name h1 {
-	font-size: 70px;
-	font-weight: bold;
+		h1 {
+		font-size: 70px;
+		font-weight: bold;
+	}
 }
 .group_show_info {
 	height: 92%;
@@ -125,13 +132,17 @@ textarea {
 	height: auto;
 	width: 400px;
 	margin-top: 30px;
-}
-.group_image img {
-	width: 100%;
-	height: auto;
+		img {
+		width: 100%;
+		height: auto;
+	}
 }
 .group_description, .group_members {
-	height: 200px;
+	height: 150px;
+	overflow: scroll;
+}
+.group_members {
+	height: 180px;
 	overflow: scroll;
 }
 .group_description {
@@ -141,13 +152,15 @@ textarea {
 }
 .group_members {
 	margin-top: 10px;
-}
-.group_members p {
-	text-align: center;
-	font-size: 20px;
-}
-.group_members ul li {
+		p {
+		text-align: center;
+		font-size: 20px;
+	}
+	ul li {
 	list-style-type: none;
+	text-align: center;
+	margin-left: -50px;
+	}
 }
 .btn-group {
 	font-size: 20px;
@@ -207,6 +220,7 @@ textarea {
 	.new_group_container {
 		width: 100%;
 		height: 380px;
+		margin-top: 60px;
 	}
 	.group_members_list {
 		overflow: scroll;
@@ -221,8 +235,8 @@ textarea {
 	.group_form {
 		width: 100%;
 		overflow: scroll;
-		height: 355px;
-		margin-top: -3px;
+		height: auto;
+		margin-top: -10px;
 		border-radius: 0px;
 	}
 	.btn-default {
@@ -232,6 +246,20 @@ textarea {
 		font-size: 20px;
 		width: 90%;
 		border-radius: 12px;
+	}
+
+	.edit_group_container {
+		height: auto;
+		width: 100%;
+		.edit_group_header {
+			h1 {
+				margin-top: -30px;
+				font-size: 50px;
+			}
+		}
+		.edit_group {
+			width: 100% !important;
+		}
 	}
 
 	/***** Group show ******/
@@ -244,7 +272,7 @@ textarea {
 		width: 100%;
 		height: 95%;
 		border: none;
-		margin-top: 15px;
+		margin-top: -25px;
 	}
 	.group_image {
 		width: 100%;

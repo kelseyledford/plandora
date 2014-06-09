@@ -2,6 +2,13 @@
    <div x-ng-controller="PackingItemCtrl">
       <div class="item-table">
          <h1>Packing List</h1>
+            <div class="new-packing">
+               <p class="new-item">Add something to pack:</p>
+               <form ng-submit="savePackingItem();">
+                  <input ng-model="newPackingItem.name" name="name" class="form-control">
+                  <input type="submit" class="submit-item">
+               </form>
+            </div>
       	<table class="table table-bordered table-condensed table-hover table-responsive">
       		<tr ng-repeat='item in packingItems'>
       			<td>{{item.name}}</td>
@@ -10,12 +17,6 @@
       	</table>
       </div>
 
-      <div class="new-packing">
-         <p class="new-item">Add something to pack:</p>
-         <form ng-submit="savePackingItem();">
-            <input ng-model="newPackingItem.name" name="name" class="form-control">
-           <input type="submit" class="submit-item">
-         </form>
-      </div>
+      
    </div>
 </div>

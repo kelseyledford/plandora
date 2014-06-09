@@ -4,6 +4,10 @@
 
 @import "bootstrap";
 
+body {
+	background: url("commentwall.jpg");
+}
+
 .chat_container {
 	border: 4px solid black;
 	margin: 0 auto;
@@ -13,6 +17,8 @@
 	text-align: center;
 	overflow: scroll;
 	border-radius: 30px;
+	background-color: white;
+	opacity: .91;
 }
 
 .chat_header {
@@ -29,13 +35,14 @@
 		width: 100%;
 		height: 410px;
 		border: none;
+		margin-top: 60px;
 
+	}
+	.composer {
+		width: 240px;
 	}
 	.chat_header {
 		font-size: 40px;
 		margin-top: -5px;
-	}
-	#u_0_2 {
-		width: 300px !important;
 	}
 }

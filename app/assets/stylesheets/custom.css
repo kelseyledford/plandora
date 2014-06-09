@@ -12,10 +12,6 @@
 	font-size: 20px;
 }
 
-.navbar-inverse .navbar-brand {
-	color: black !important;
-	
-}
 .plandoralogo {
 	 position:fixed;
      left: 8px;
@@ -30,6 +26,9 @@
 }
 footer, .navbar-custom, .navbar-header, #groups_background, #features_background{
 	background-color: rgb(100,180,240);
+}
+#features_background {
+	color: darkblue;
 }
 #user-widget {
 	text-decoration: none;

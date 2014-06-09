@@ -10,10 +10,12 @@ class PlansController < ApplicationController
 
 	def new
 		@plan = Plan.new
+		@hide_features_nav  = true
 	end
 
 	def create
 		@plan = @schedule.plans.new(plan_params)
+		@hide_features_nav  = true
 		if @plan.save
 			redirect_to group_schedules_path(@schedule.group)
 		else

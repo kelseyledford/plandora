@@ -4,8 +4,12 @@
 <% end %>
 
 <h1 class="text-center">Create Hash Tag</h1>
+<div class="tag_index_container">
+  <div class="tag_index_header">
+    <h1>Hashtags</h1>
+  </div>
 
-<p id="notice"><%= notice %> </p>
+  <p id="notice"><%= notice %> </p>
 
 <div class="well well-lg">
   <table class="table">
@@ -34,4 +38,11 @@
 <br>
 <div class="text-center">
 <%= link_to 'New Tag', new_group_tag_path(@group), class: 'btn btn-default btn-lg' %>
+</div>
+  </table>
+
+  <br>
+
+  <li class="new_tag_button"><%= link_to 'New Tag', new_group_tag_path(@group), class:"new_tag_link" %></li>
+
 </div>
