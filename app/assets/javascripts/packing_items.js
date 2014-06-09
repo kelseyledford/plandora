@@ -33,4 +33,3 @@ plandoraApp.controller('PackingItemCtrl', ['PackingItem', '$scope', function(Pac
   };
 
 }]);
-
