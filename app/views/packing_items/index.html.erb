@@ -1,19 +1,21 @@
-<h1>Packing List</h1>
-
- <div x-ng-app='plandora-app'>
+<div class="container packing-page" x-ng-app='plandora-app'>
    <div x-ng-controller="PackingItemCtrl">
-   	<table>
-   		<tr ng-repeat='item in packingItems'>
-   			<td>{{item.name}}</td>
-   		</tr>
-   	</table>
+      <div class="item-table">
+         <h1>Packing List</h1>
+      	<table class="table table-bordered table-condensed table-hover table-responsive">
+      		<tr ng-repeat='item in packingItems'>
+      			<td>{{item.name}}</td>
+               <td><input type="checkbox"></td>
+      		</tr>
+      	</table>
+      </div>
 
-	 <h3>Add something to pack:</h3>
-	 <form ng-submit="savePackingItem();">
-	 	<label for="name">Name:</label>
-	 	<input ng-model="newPackingItem.name" name="name" class="form-control">
-      <input type="submit" value="Add New Item!">
-	 </form>
-
+      <div class="new-packing">
+         <p class="new-item">Add something to pack:</p>
+         <form ng-submit="savePackingItem();">
+            <input ng-model="newPackingItem.name" name="name" class="form-control">
+           <input type="submit" class="submit-item">
+         </form>
+      </div>
    </div>
- </div>
+</div>

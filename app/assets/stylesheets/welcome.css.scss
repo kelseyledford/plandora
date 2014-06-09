@@ -2,7 +2,7 @@
 
 
 .welcome_container {
-	margin-top: 50px;
+	margin-top: 70px;
 }
 .welcome_plandora {
 	width: 100%;
@@ -34,13 +34,14 @@
 	border: 5px solid black;
 	background: url("planner.jpg");	
 	background-size: 100% 100%;
+		h2 {
+		margin-top: 60px;
+		color: white;
+		font-weight: bolder;
+		font-size: 37px;
+	}
 }
-.plandora_info h2 {
-	margin-top: 60px;
-	color: white;
-	font-weight: bolder;
-	font-size: 37px;
-}
+
 .what_is_plandora {
 	text-align: center;
 	border: 5px solid black;
@@ -85,13 +86,16 @@
 	height: 640px;
 	margin-top: -20px;
 	border-top: 5px solid black;
+		h1 {
+			color: black;
+			padding: 20px 0;
+		}
 }
 .plandora_features h1 {
 	color: black;
 	padding: 20px 0;
 	text-align: center;
 }
-
 
 @media (max-width: 480px) {
 	.welcome_header {

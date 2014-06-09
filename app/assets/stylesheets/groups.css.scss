@@ -36,7 +36,7 @@ body {
 	height: 780px;
 	width: 80%;
 	margin: 0px auto;
-	margin-top: 60px;
+	margin-top: 80px;
 	text-align: center;	
 }
 
@@ -62,6 +62,9 @@ body {
 }
 textarea {
    resize: none;
+}
+#group_avatar {
+	margin: 0 auto;
 }
 .btn-default {
 	background-color: black;
@@ -94,9 +97,9 @@ textarea {
 	height: auto;
 	width: 90%;
 	margin: 0 auto;
-	padding-bottom: 40px;
+	padding-bottom: 20px;
 	background-color: white;
-	margin-top: 60px;
+	margin-top: 80px;
 }
 .group_name {
 	text-align: center;
@@ -119,12 +122,15 @@ textarea {
 .group_image {
 	margin: 0 auto;
 	text-align: center;
-	border: 1px solid black;
 	height: auto;
-	width: 300px;
+	width: 400px;
+	margin-top: 30px;
+}
+.group_image img {
+	width: 100%;
+	height: auto;
 }
 .group_description, .group_members {
-	border: 1px solid black;
 	height: 200px;
 	overflow: scroll;
 }
@@ -145,9 +151,7 @@ textarea {
 }
 .btn-group {
 	font-size: 20px;
-	position: fixed !important;
 	margin-left: 50px;
-	margin-top: -270px;
 	z-index: 600000;
 	font-family: sans-serif;
 }
@@ -183,7 +187,7 @@ textarea {
 	}
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
 
 	.new_group_header {
 		height: 30px;
@@ -242,6 +246,10 @@ textarea {
 		border: none;
 		margin-top: 15px;
 	}
+	.group_image {
+		width: 100%;
+		height: 100px;
+	}
 	.group_image img {
 		height: auto;
 		width: 100%;
@@ -257,9 +265,15 @@ textarea {
 	}
 	.group_members p {
 		text-align: center;
+		font-size: 14px;
+		padding: 5px 0;
 	}
 	.btn-primary {
 		width: 100%;
+	}
+	.group_name h1{
+		font-size: 40px;
+		margin-top: 0;
 	}
 	
 }

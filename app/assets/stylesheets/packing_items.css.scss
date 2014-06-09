@@ -3,3 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "bootstrap";
+
+.packing-page {
+	text-align: center;
+	margin-top: 70px;
+}
+
+.item-table {
+	width: 70%;
+	margin-left: 15%;
+}
+
+.new-packing {
+	width: 50%;
+	margin-left: 25%;
+}
+
+.new-item {
+	font-size: 1.25em;
+	font-weight: bold;
+}
+
+.submit-item {
+	margin-top: 5px;
+}

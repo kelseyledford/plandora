@@ -1,5 +1,8 @@
 class TagsController < ApplicationController
+  
+  before_action :set_group
   before_action :set_tag, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource :group
 
   # GET /tags
   # GET /tags.json
@@ -39,8 +42,8 @@ class TagsController < ApplicationController
      end
 
       if @tag.save
-        format.html { redirect_to @tag, notice: 'Tag was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @tag }
+        format.html { redirect_to group_tags_path(@tag.group), notice: 'Tag was successfully created.' }
+        format.json { render json: @tag, status: :created, location: @tag }
       else
         format.html { render action: 'new' }
         format.json { render json: @tag.errors, status: :unprocessable_entity }
@@ -52,10 +55,10 @@ class TagsController < ApplicationController
   def update
     respond_to do |format|
        if @tag.update(tag_params)
-        format.html { redirect_to @tag, notice: 'Tag was successfully updated.' }
+        format.html { redirect_to group_tags_path(@tag.group), notice: 'Tag was successfully updated.' }
         format.json { head :no_content }
        else
-        format.html { render action: 'edit' }
+        format.html { render group_tag_edit_path(@group, @tag) }
         format.json { render json: @tag.errors, status: :unprocessable_entity }
        end
       end
@@ -66,12 +69,17 @@ class TagsController < ApplicationController
   def destroy
     @tag.destroy
     respond_to do |format|
-      format.html { redirect_to tags_url }
+      format.html { redirect_to :back }
       format.json { head :no_content }
     end
   end
 
   private
+
+    def set_group
+      @group = Group.find(params[:group_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_tag
       @tag = Tag.find(params[:id])
@@ -81,5 +89,6 @@ class TagsController < ApplicationController
     def tag_params
       params.require(:tag).permit(:name)
     end
+
 end
 
