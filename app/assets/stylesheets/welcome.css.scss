@@ -52,12 +52,20 @@
 	margin: 0px auto;
 	margin-top: 50px;
 }
-.what_is_plandora_info, .features_info {
+.what_is_plandora_info {
 	color: black;
 	height: 325px;
 	width: 615px;
 	font-size: 20px;
 	text-align: center;
+	margin: 35px 0 0 40px;
+	overflow: scroll;
+}
+.features_info {
+	color: black;
+	height: 325px;
+	width: 615px;
+	font-size: 20px;
 	margin: 35px 0 0 40px;
 	overflow: scroll;
 }
@@ -73,7 +81,6 @@
 .plandora_features {
 	background: url('whatsplandora3.jpg');
 	background-size: 100% 100%;
-	text-align: center;
 	width: 100%;
 	height: 640px;
 	margin-top: -20px;
@@ -82,6 +89,7 @@
 .plandora_features h1 {
 	color: black;
 	padding: 20px 0;
+	text-align: center;
 }
 
 

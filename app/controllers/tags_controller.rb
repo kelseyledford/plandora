@@ -12,8 +12,7 @@ class TagsController < ApplicationController
   def show
     tag = Tag.find(params[:id])
     # binding.pry
-    # @photos = Instagram.tag_recent_media('dog', {:count => 15})
-    @photos = Instagram.tag_recent_media("#{tag.name}", {:count => 4})
+    @photos = Instagram.tag_recent_media("#{tag.name}", {:count => 8})
   end
 
   # GET /tags/new
@@ -32,7 +31,7 @@ class TagsController < ApplicationController
 
     respond_to do |format|
      if @tag.save
-        @instagrams = Instagram.tag_recent_media(@tag.name.gsub(" ",""), {:count=>5})
+        @instagrams = Instagram.tag_recent_media(@tag.name.gsub(" ",""), {:count=> 8})
       # @instagrams.each do |post|
       #   text = post["caption"]["text"] rescue ""
       #   Post.save_post(@tag.id, text, post["user"]["profile_picture"], post["user"]["username"])
