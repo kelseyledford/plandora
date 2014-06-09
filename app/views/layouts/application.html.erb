@@ -35,6 +35,9 @@
 								<li class="view_home">
 									<%= link_to "Home", group_path(@group) %>
 								</li>
+								<li class="photos">
+									<%= link_to "Instagram", group_tags_path(@group) %>
+								</li>
 								<li class="view_directions">
 									<% unless @group.direction %>
 										<%= link_to "New Direction Page", new_group_direction_path(@group) %>
