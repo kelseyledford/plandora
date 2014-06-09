@@ -1,8 +1,9 @@
 <div class="new_tag_container">
-
-<h1>New tag</h1>
-
+	<div class="new_tag_header">
+		<h1>Enter New Tag</h1>
+	</div>
 <%= render 'form' %>
-
-<%= link_to 'Back', group_tags_path(@group) %>
+	<div class="back_link_container">
+		<%= link_to 'Go Back', group_tags_path(@group), class: "back_link" %>
+	</div>
 </div>
