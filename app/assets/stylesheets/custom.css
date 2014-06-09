@@ -2,6 +2,9 @@
 @import "bootstrap";
 
 /****** Navbar ******/
+.navbar {
+	margin-bottom: 0 !important;
+}
 
 .navbar-inverse, .navbar-nav > li > a {
 	font-family: sans-serif;
@@ -25,7 +28,7 @@
 	font-size: 15px;
 	font-weight: bold;
 }
-footer, .navbar-custom, .navbar-header, #groups_background{
+footer, .navbar-custom, .navbar-header, #groups_background, #features_background{
 	background-color: rgb(100,180,240);
 }
 #user-widget {

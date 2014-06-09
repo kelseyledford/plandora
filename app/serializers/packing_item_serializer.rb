@@ -1,3 +1,3 @@
 class PackingItemSerializer < ActiveModel::Serializer
-  attributes :id, :name, :is_packed
+  attributes :id, :name
 end

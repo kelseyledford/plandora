@@ -13,7 +13,7 @@
 </head>
 <body>					
 
-<nav class="navbar navbar-inverse navbar-fixed-top navbar-custom" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-custom navbar-margin" role="navigation">
 	<div class="container-fluid navbar-custom">
 		<!-- Brand and toggle get grouped for better mobile display -->
     	<div class="navbar-header">
@@ -30,7 +30,7 @@
     		<ul class="nav navbar navbar-left feature-nav">
     			<% unless @hide_features_nav %>
 							<li class="dropdown">
-							<a data-toggle="dropdown" href="#"><%= @group.name %><b class="caret"></b></a>
+							<a data-toggle="dropdown" href="#" id="features_background"><%= @group.name %><b class="caret"></b></a>
 							<ul class="dropdown-menu" role="menu">
 								<li class="view_home">
 									<%= link_to "Home", group_path(@group) %>
