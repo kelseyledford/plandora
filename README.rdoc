@@ -1,28 +1,25 @@
-== README
+== Plandora
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A feature-rich travel planning app for that makes organizing trips fun for groups.
 
-Things you may want to cover:
+Created with Ruby on Rails, AngularJS and PostgreSQL
 
-* Ruby version
+Features
 
-* System dependencies
+* Instagram Photo Page
 
-* Configuration
+* Chat
 
-* Database creation
+* Poll Page
 
-* Database initialization
+* Itinerary
 
-* How to run the test suite
+* Packing list
 
-* Services (job queues, cache servers, search engines, etc.)
+* Bookmarklet for saving ideas
 
-* Deployment instructions
+* Directions
 
-* ...
+Created by Kelsey Ledford, Dean Mandile and Charly Yoon
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+General Assembly's Web Development Immersive 5/6, Project 3
