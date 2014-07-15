@@ -2,6 +2,11 @@ class GroupsController < ApplicationController
 
 	# load_and_authorize_resource :except => [:new, :create]
 
+	def index
+		@groups = Group.all
+		@hide_features_nav = true
+	end
+	
 	def show
 		@group = Group.find(params[:id])
 	end
