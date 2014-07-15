@@ -1,10 +1,10 @@
 == Plandora
 
-A feature-rich travel planning app for that makes organizing trips fun for groups.
+====A feature-rich travel planning app for that makes organizing trips fun for groups.
 
-Created with Ruby on Rails, AngularJS and PostgreSQL
+*Created with* Ruby on Rails, AngularJS and PostgreSQL
 
-Features
+===Features
 
 * Instagram Photo Page
 
@@ -20,6 +20,6 @@ Features
 
 * Directions
 
-Created by Kelsey Ledford, Dean Mandile and Charly Yoon
+*Created by* {Kelsey Ledford}[http://www.github.com/kelseyledford], {Dean Mandile}[http://github.com/Deanskee] and {Charly Yoon}[http://github.com/charlyy]
 
 General Assembly's Web Development Immersive 5/6, Project 3
