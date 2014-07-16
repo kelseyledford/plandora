@@ -1,6 +1,20 @@
 
 @import "bootstrap";
+.group_image {
+	height: 100%;
+	width: 100%;
+	margin:0;
 
+	img {
+		height:100%;
+		width:100%;
+
+	}
+}
+
+.group_container{
+	padding:0 !important;
+}
 /****** Navbar ******/
 .navbar {
 	margin-bottom: 0 !important;

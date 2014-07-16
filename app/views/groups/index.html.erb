@@ -1,0 +1,10 @@
+<div class="container-fluid row">
+		<% current_user.groups.each do |group, id| %>
+			<div class="col-xs-6 group_container">
+				<%= link_to group_path(group) do %> 
+				<h2 class="group_name_index"><%= group.name %><br></h2>
+				<%= image_tag group.avatar() %> 
+				<% end %>							
+			</div>
+		<% end %>
+</div>
