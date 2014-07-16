@@ -2,8 +2,8 @@
 	<%= bootstrap_form_for(@group) do |f| %>
 		<%= f.text_field :name, label: 'Group Name' %>
 		<%= f.text_area :description, {size: '30x7'} %>
-		<%= f.label 'Trip Type' %> 
-		<%= collection_select :group, :theme, Theme.all, :id, :name %><br />
+		<!-- <%= f.label 'Trip Type' %>  -->
+		<!-- <%= collection_select :group, :theme, Theme.all, :id, :name %><br /> -->
 		<%= f.file_field :avatar %>
 	<br />
 

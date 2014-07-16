@@ -6,12 +6,12 @@
 #   cities = City.create([{ name: "Chicago" }, { name: "Copenhagen" }])
 #   Mayor.create(name: "Emanuel", city: cities.first)
 
-Theme.destroy_all
+# Theme.destroy_all
 
-Theme.create(name: "Camping")
-Theme.create(name: "Casino")
-Theme.create(name: "Europe")
-Theme.create(name: "Cruise")
-Theme.create(name: "Theme Park")
-Theme.create(name: "Road Trip")
-Theme.create(name: "Etc.")
+# Theme.create(name: "Camping")
+# Theme.create(name: "Casino")
+# Theme.create(name: "Europe")
+# Theme.create(name: "Cruise")
+# Theme.create(name: "Theme Park")
+# Theme.create(name: "Road Trip")
+# Theme.create(name: "Etc.")
