@@ -4,4 +4,6 @@ class Schedule < ActiveRecord::Base
 	has_many :plans, dependent: :destroy
 	accepts_nested_attributes_for :plans, allow_destroy: true
 
+	default_scope order('date ASC')
+
 end

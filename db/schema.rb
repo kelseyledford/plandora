@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140605223509) do
+ActiveRecord::Schema.define(version: 20140716211143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,10 +45,22 @@ ActiveRecord::Schema.define(version: 20140605223509) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "theme_id"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+  end
+
+  add_index "groups", ["theme_id"], name: "index_groups_on_theme_id", using: :btree
+
+  create_table "invites", force: true do |t|
+    t.string   "email"
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.string   "token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "links", force: true do |t|
@@ -67,6 +79,7 @@ ActiveRecord::Schema.define(version: 20140605223509) do
     t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "packed_by"
   end
 
   add_index "packing_items", ["group_id"], name: "index_packing_items_on_group_id", using: :btree
@@ -111,10 +124,10 @@ ActiveRecord::Schema.define(version: 20140605223509) do
   add_index "posts", ["tag_id"], name: "index_posts_on_tag_id", using: :btree
 
   create_table "schedules", force: true do |t|
-    t.string   "date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "group_id"
+    t.date     "date"
   end
 
   add_index "schedules", ["group_id"], name: "index_schedules_on_group_id", using: :btree
@@ -149,6 +162,8 @@ ActiveRecord::Schema.define(version: 20140605223509) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   create_table "votes", force: true do |t|

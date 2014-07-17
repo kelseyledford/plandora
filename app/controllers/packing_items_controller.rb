@@ -11,6 +11,10 @@ class PackingItemsController < ApplicationController
 		respond_with @packing_items
 	end
 
+	def show
+    respond_with @yogurt
+  end
+
 	def new
 		@packing_item = PackingItem.new
 	end
@@ -34,9 +38,9 @@ class PackingItemsController < ApplicationController
 	end
 
 	def update
-		if @packing_item.update_attributes(packing_item_params)
+		if @packing_item.update(packing_item_params)
 			respond_to do |format|
-				format.html { redirect_to group_packing_items_path(@packing_item.group) }
+				format.html { redirect_to :back } #group_packing_items_path(@packing_item.group) }
 				format.json { render nothing: true, status: :no_content }
 			end
 		else
@@ -49,13 +53,16 @@ class PackingItemsController < ApplicationController
 
 	def destroy
 		@packing_item.destroy
-		redirect_to :back
+		respond_to do |format|
+			format.html { redirect_to :back }
+			format.json { render json: { head: :ok } }
+		end
 	end
 
 	private
 
 	def packing_item_params
-		params.require(:packing_item).permit(:name, :is_packed)
+		params.require(:packing_item).permit(:name, :is_packed, :packed_by)
 	end
 
 	def set_group

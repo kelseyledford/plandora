@@ -3,12 +3,23 @@
 		<h1>Itinerary</h1>
 	</div>
 	<% @group.schedules.each do |schedule| %>
-		<h3><%= schedule.date %></h3>
+		<h3>
+			<%= schedule.date.strftime("%A") %>
+		</h3>
 		<div class="itinerary_table_container">
 			<table class = "itinerary-table" border='1'>
-				<th>Time</th>
-				<th>Activity</th>
-				<th>Delete</th>
+				<th colspan="4">
+					<%= schedule.date.strftime("%B %d, %Y") %>
+					<%= link_to schedule, method: :delete, data: { confirm: "Are you sure you want to delete this day?" } do %><span class="glyphicon glyphicon-trash"></span><% end %>
+					<%= link_to edit_schedule_path(schedule) do %><span class="glyphicon glyphicon-pencil"></span><% end %>
+					<%= link_to new_schedule_plan_path(schedule, @plan) do %><span class="glyphicon glyphicon-plus"></span><% end %>
+
+				</th>
+				<tr>
+					<td class="subheader">Time</td>
+					<td class="subheader">Activity</td>
+					<td class="subheader">Delete</td>
+				</tr>
 				<% schedule.plans.each do |plan| %>
 					<tr>
 						<td><%= plan.activity_time.try(:strftime, "%l:%M%P") %></td>
@@ -17,12 +28,8 @@
 					</tr>
 				<% end %>
 			</table>
-	</div>
-		<br>
-			<%= link_to 'Add an activity', new_schedule_plan_path(schedule, @plan) %>
-			<%= link_to 'Edit Date', edit_schedule_path(schedule) %><br><br>
-			<%= link_to 'Delete Day', schedule, method: :delete %><br>
-	<% end %>
+		</div>
+		<% end %>
 	<br><br>
 	<%= link_to 'New Date', new_group_schedule_path(@group, @schedule), class: "date_submit" %>
 </div>
