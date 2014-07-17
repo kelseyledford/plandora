@@ -24,6 +24,11 @@
 	margin-bottom: 0 !important;
 }
 
+.nav_images {
+	height: 50px;
+	width: 50px;
+}
+
 #nav_bar_fix.affix {
 	position:fixed !important;
 	top: 0;
