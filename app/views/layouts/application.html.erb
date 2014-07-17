@@ -11,23 +11,20 @@
   <%= stylesheet_link_tag "custom" %>
   <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Qwigley' %>
 </head>
-<body>		
-<nav class="navbar navbar-inverse navbar-fixed-top navbar-custom navbar-margin" role="navigation">			
+<body data-spy="scroll" data-target="#myScrollspy">		
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-custom navbar-margin" id="nav_bar_fix" role="navigation">
+		<div class="navbar-header">
+			<div class="navbar-brand plandoralogo">
+				<%= link_to image_tag("plandoralogosmall.png", :border=>0), welcome_index_path %>
+			</div>
+		</div>
     		<ul class="nav navbar-nav navbar-right">
 		      <% if current_user %>
-		        <li class="dropdown">
-		  			<a data-toggle="dropdown" href="#" id="groups_background">Groups<b class="caret"></b></a>
-		  				<ul class="dropdown-menu" role="menu">
-		  					<% current_user.groups.each do |group| %>
-			    				<li class="group_name_list"><%= link_to group.name, group %></li>
-			    				<li role="presentation" class="divider"></li>
-		  					<% end %>
-	    					<li class="add_group_style"><%= link_to "+ Add New Group", new_group_path %></li>
-							</ul>
-						</li>
+					<%# link_to "+ Add New Group", new_group_path %>
 			      <li class="user-widget">
 			      	<%= link_to "Sign out", signout_path, id: "sign_out" %>
 			      </li>
+			      <li><%= link_to "Groups", groups_path %></li>
 		      <% else %>
 		        	<li class="user-widget">
 		        		<%= link_to "Facebook Login", "/auth/facebook", id: "sign_in" %>
@@ -37,10 +34,6 @@
     	</div><!-- /.navbar-collapse -->
   	</div><!-- /.container-fluid -->
 </nav>
-
-<div class="plandoralogo">
-	<%= link_to image_tag("plandoralogosmall.png", :border=>0), welcome_index_path %>
-</div>
 
 <%= yield %>
 
