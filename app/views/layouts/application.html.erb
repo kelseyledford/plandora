@@ -11,7 +11,7 @@
   <%= stylesheet_link_tag "custom" %>
   <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Qwigley' %>
 </head>
-<body data-spy="scroll" data-target="#myScrollspy">		
+<body>		
 <nav class="navbar navbar-inverse navbar-fixed-top navbar-custom navbar-margin" id="nav_bar_fix" role="navigation">
 		<div class="navbar-header">
 			<div class="navbar-brand plandoralogo">
@@ -21,10 +21,10 @@
     		<ul class="nav navbar-nav navbar-right">
 		      <% if current_user %>
 					<%# link_to "+ Add New Group", new_group_path %>
-			      <li class="user-widget">
-			      	<%= link_to "Sign out", signout_path, id: "sign_out" %>
-			      </li>
-			      <li><%= link_to "Groups", groups_path %></li>
+				<li><%= link_to "Groups", groups_path %></li>
+			    <li class="user-widget">
+			    	<%= link_to "Sign out", signout_path, id: "sign_out" %>
+			    </li>
 		      <% else %>
 		        	<li class="user-widget">
 		        		<%= link_to "Facebook Login", "/auth/facebook", id: "sign_in" %>

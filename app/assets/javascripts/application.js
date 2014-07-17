@@ -64,7 +64,7 @@ $(document).ready(function() {
 
       $("#nav_bar_fix").affix({
         offset: {
-          top: $('.navbar-header').height()
+           top: 10 //$('.navbar-header').height()
         }
       });
 
