@@ -53,10 +53,6 @@
 	font-weight: bold;
 }
 
-.nav li a {
-	position: relative;
-	float: right;
-}
 footer, .navbar-custom, .navbar-header, #groups_background, #features_background{
 	background-color: rgb(100,180,240);
 }
@@ -148,6 +144,17 @@ footer {
 	opacity: 1 !important;
 }
 
+@media (min-width: 693px) {
+	.nav li a {
+	position: relative !important;
+
+	}
+}
+@media (max-width: 692px) {
+	.nav li a { 
+		float: none !important;
+	}
+}
 @media (max-width: 480px) {
 	footer {
 		font-size: 12px;
