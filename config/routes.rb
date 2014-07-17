@@ -14,7 +14,7 @@ Plandora::Application.routes.draw do
     resources :schedules, shallow: true do
       resources :plans
     end
-    resources :packing_items, shallow: true
+    resources :packing_items
     resources :links
   end
   resources :welcome
