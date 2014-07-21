@@ -1,5 +1,10 @@
-<ul>
-	<% current_user.groups.each do |group| %>
-		<li><%= link_to group.name, group_path(group) %></li>
-	<% end %>
-</ul>
+<div class="container-fluid row">
+		<% current_user.groups.each do |group, id| %>
+			<div class="col-md-1 col-md-6 group_container">
+				<%= link_to group_path(group) do %> 
+				<h2 class="group_name_index"><%= group.name %><br></h2>
+				<%= image_tag group.avatar() %> 
+				<% end %>							
+			</div>
+		<% end %>
+</div>

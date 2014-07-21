@@ -1,33 +1,59 @@
-<ul>
+
+<div class="group_show_container">
+	<div class="group_show_info">	
+		<div class="group_name">
+				<h1><%= @group.name %></h1>
+		</div>
+		<div class="group_image">
+			<% if @group.avatar_file_name %>
+				<%= image_tag @group.avatar.url %>
+			<% end %>
+		</div>
+		<div class="group_description">
+			   <%= @group.description %>
+		</div>
+		<div class="group_members">
+			<strong><p>Group Members</p></strong>
+			<ul>
+				<% @group.users.each do |user| %>
+				<li class="group_members_names"><%= user.name %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- <ul>
 	<li>
-		<%= link_to "Home", group_path(@group) %>
+		<%# link_to "Home", group_path(@group) %>
 	</li>
 	<li class="photos">
-		<%= link_to "Instagram", group_tags_path(@group) %>
+		<%# link_to "Instagram", group_tags_path(@group) %>
 	</li>
 	<li class="view_directions">
-		<% unless @group.direction %>
-			<%= link_to "Directions", new_group_direction_path(@group) %>
-		<% else %>
-			<%= link_to "Directions", group_direction_path(@group, @direction) %>
-		<% end %>
+		<%# unless @group.direction %>
+			<%# link_to "Directions", new_group_direction_path(@group) %>
+		<%# else %>
+			<%# link_to "Directions", group_direction_path(@group, @direction) %>
+		<%# end %>
 	</li>
 	<li class="view_chat">
-		<%= link_to "Chat", group_chat_path(@group, @chat) %>
+		<%# link_to "Chat", group_chat_path(@group, @chat) %>
 	</li>
 	<li class="view_polls">
-		<%= link_to "Polls", group_polls_path(@group) %>
+		<%# link_to "Polls", group_polls_path(@group) %>
 	</li>
 	<li class="packing_list_link">
-		<%= link_to "Packing List", group_packing_items_path(@group, @packing_list) %>
+		<%# link_to "Packing List", group_packing_items_path(@group, @packing_list) %>
 	</li>
 	<li class="itinerary_link">
-		<%= link_to "Itinerary", group_schedules_path(@group, @schedule) %>
+		<%# link_to "Itinerary", group_schedules_path(@group, @schedule) %>
 	</li>
 	<li class="ideas">
-		<%= link_to "Ideas", group_links_path(@group, @links) %>
+		<%# link_to "Ideas", group_links_path(@group, @links) %>
 	</li>
 	<li class="edit_group_link">
-		<%= link_to "Edit Group", edit_group_path(@group) %>
+		<%# link_to "Edit Group", edit_group_path(@group) %>
 	</li>
-</ul>
+</ul> -->
+

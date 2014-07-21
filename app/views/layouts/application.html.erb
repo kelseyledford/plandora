@@ -13,90 +13,41 @@
   <!-- Allows you to use media queries on mobile -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>					
-
-<nav class="navbar navbar-inverse navbar-fixed-top navbar-custom navbar-margin" role="navigation">
-	<div class="container-fluid navbar-custom">
-		<!-- Brand and toggle get grouped for better mobile display -->
-    	<div class="navbar-header">
-      		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+<body>		
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-custom navbar-margin" id="nav_bar_fix" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 		        <span class="sr-only">Toggle navigation</span>
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
       		</button>
-      		<!-- <a class="navbar-brand" href="#scrollplandora" id="scrollplandora"/>Plandora</a> -->
+			<div class="navbar-brand plandoralogo">
+				<%= link_to image_tag("plandoralogosmall.png", :border=>0), welcome_index_path %>
 			</div>
-    	<!-- Collect the nav links, forms, and other content for toggling -->
-    	<div class="collapse navbar-collapse navbar-custom" id="bs-example-navbar-collapse-1">
-    		<ul class="nav navbar navbar-left feature-nav">
-    			<% unless @hide_features_nav %>
-							<li class="dropdown">
-							<a data-toggle="dropdown" href="#" id="features_background"><%= @group.name %><b class="caret"></b></a>
-							<ul class="dropdown-menu" role="menu">
-								<li class="view_home">
-									<%= link_to "Home", group_path(@group) %>
-								</li>
-								<li class="photos">
-									<%= link_to "Instagram", group_tags_path(@group) %>
-								</li>
-								<li class="view_directions">
-									<% unless @group.direction %>
-										<%= link_to "Directions", new_group_direction_path(@group) %>
-									<% else %>
-										<%= link_to "Directions", group_direction_path(@group, @direction) %>
-									<% end %>
-								</li>
-								<li class="view_chat">
-									<%= link_to "Chat", group_chat_path(@group, @chat) %>
-								</li>
-								<li class="view_polls">
-									<%= link_to "Polls", group_polls_path(@group) %>
-								</li>
-								<li class="packing_list_link">
-									<%= link_to "Packing List", group_packing_items_path(@group, @packing_list) %>
-								</li>
-								<li class="itinerary_link">
-									<%= link_to "Itinerary", group_schedules_path(@group, @schedule) %>
-								</li>
-								<li class="ideas">
-									<%= link_to "Ideas", group_links_path(@group, @links) %>
-								</li>
-								<li class="edit_group_link">
-									<%= link_to "Edit Group", edit_group_path(@group) %>
-								</li>
-							</ul>
-							</li>
-					<% end %>
-				</ul>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     		<ul class="nav navbar-nav navbar-right">
-		      <% if current_user %>
-		        <li class="dropdown">
-		  			<a data-toggle="dropdown" href="#" id="groups_background">Groups<b class="caret"></b></a>
-		  				<ul class="dropdown-menu" role="menu">
-		  					<% current_user.groups.each do |group| %>
-			    				<li class="group_name_list"><%= link_to group.name, group %></li>
-			    				<li role="presentation" class="divider"></li>
-		  					<% end %>
-	    					<li class="add_group_style"><%= link_to "+ Add New Group", new_group_path %></li>
-							</ul>
-						</li>
-			      <li class="user-widget">
-			      	<%= link_to "Sign out", signout_path, id: "sign_out" %>
-			      </li>
-		      <% else %>
-		        	<li class="user-widget">
-		        		<%= link_to "Facebook Login", "/auth/facebook", id: "sign_in" %>
-		   				</li>
-		   		<% end %>
-        </ul>
+			      <li class="dropdown dropdown-toggle" data-toggle="dropdown">
+			      <!-- 	<ul class="dropdown-menu" role="menu"> -->
+			      		<% if current_user %>
+						<li><%= link_to "+ Add New Group", new_group_path %></li>
+						<li><%= link_to "Groups", groups_path %></li>
+						<li class="divider"></li>
+					    <li class="user-widget">
+					    	<%= link_to "Sign out", signout_path, id: "sign_out" %>
+					    </li>
+				      	<% else %>
+			        	<li class="user-widget">
+			        		<%= link_to "Facebook Login", "/auth/facebook", id: "sign_in" %>
+			   				</li>
+			   			<% end %>
+			   		<!-- </ul> -->
+			   	</li>
+        	</ul>
     	</div><!-- /.navbar-collapse -->
   	</div><!-- /.container-fluid -->
 </nav>
-
-<div class="plandoralogo">
-	<%= link_to image_tag("plandoralogosmall.png", :border=>0), welcome_index_path %>
-</div>
 
 <%= yield %>
 

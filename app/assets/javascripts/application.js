@@ -60,7 +60,13 @@ $(document).ready(function() {
     }); 
  $(".charly_email").click(function(){
         $("#charly").tooltip('toggle');
-    }); 
+    });
+
+      $("#nav_bar_fix").affix({
+        offset: {
+           top: 10 //$('.navbar-header').height()
+        }
+      });
 
 
 });

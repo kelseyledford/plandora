@@ -4,7 +4,25 @@
 body {
 	color: white;
 }
+/****** Group Index ******/
+.group_container {
+	height: 100%;
+	width: 50%;
+	margin:0;
+	img {
+		height:50%;
+		width:100%;
+	}
+}
+.group_name_index {
+	position: absolute;
+	margin:1px 0 10px 4px;
+}
 
+.group_index {
+	margin-top:80px;
+	list-style-type:none;
+}
 /****** Group Features Nav ******/
 
 .group_features_nav {
