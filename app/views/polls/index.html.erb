@@ -4,7 +4,13 @@
 <div class='table-div'>
 	<% @group.polls.each do |poll| %>
 	<table class="table table-bordered table-condensed table-hover table-responsive">
-		<th colspan="3" class='table-header'><%= poll.topic %></th>
+		<th colspan="3" class='table-header'>
+			<%= poll.topic %>
+			<span class="delete-poll">
+				<%= link_to new_poll_poll_option_path(poll) do %><span class="glyphicon glyphicon-plus"></span><% end %>
+				<%= link_to poll, method: :delete, data: { confirm: "Are you sure you want to delete this poll?" } do %><span class="glyphicon glyphicon-trash"></span><% end %>
+			</span>
+		</th>
 		<tr>
 			<td class='subheader'>Option</td>
 			<td class='subheader'>Votes</td>
@@ -18,16 +24,6 @@
 		</tr>
 		<% end %>
 	</table>
-	<div class="poll-options">
-		<div class="new-poll-option">
-			<span class="glyphicon glyphicon-star"></span>
-			<%= link_to "New Option", new_poll_poll_option_path(poll) %>
-		</div>
-		<div class="delete-poll">
-			<span class="glyphicon glyphicon-star"></span>
-			<%= link_to "Delete this Poll", poll, method: :delete %>
-		</div>
-	</div>
 	<br><br>
 <% end %>
 </div>

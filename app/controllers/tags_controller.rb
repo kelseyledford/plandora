@@ -15,7 +15,8 @@ class TagsController < ApplicationController
   def show
     tag = Tag.find(params[:id])
     # binding.pry
-    @photos = Instagram.tag_recent_media("#{tag.name}", { :count => 8,:client_id => ENV['IG_CLIENT_ID']})
+    # @photos = Instagram.tag_recent_media("#{tag.name}", { :count => 8,:client_id => ENV['IG_CLIENT_ID']})
+    @photos = Instagram.tag_recent_media("#{tag.name}", {:count => 8}, {:access_token => '12091701.27095e3.030ac770cb8f40ee91b7a34da2e62298'})
   end
 
   # GET /tags/new
@@ -34,7 +35,10 @@ class TagsController < ApplicationController
 
     respond_to do |format|
      if @tag.save
-        @instagrams = Instagram.tag_recent_media(@tag.name.gsub(" ",""), { :count=> 8, :client_id => ENV['IG_CLIENT_ID']})
+
+        # @instagrams = Instagram.tag_recent_media(@tag.name.gsub(" ",""), { :count=> 8, :client_id => ENV['IG_CLIENT_ID']})
+        @instagrams = Instagram.tag_recent_media(@tag.name.gsub(" ",""), {:count=> 8}, {:access_token => '12091701.27095e3.030ac770cb8f40ee91b7a34da2e62298'})
+
       # @instagrams.each do |post|
       #   text = post["caption"]["text"] rescue ""
       #   Post.save_post(@tag.id, text, post["user"]["profile_picture"], post["user"]["username"])

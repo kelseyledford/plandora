@@ -9,6 +9,11 @@
 	width: 70% ;
 }
 
+.itinerary-table th span {
+	float: right;
+	padding: 3px;
+}
+
 .itinerary-table th {
 	text-align: center;
 }
@@ -47,6 +52,15 @@
 			border-right-color: darkgrey;
 			}	
 		}	
+
+	.edit-itinerary {
+		padding: 10px;
+		margin-bottom: 20px;
+	}
+
+	.edit-itinerary a {
+		padding: 10px;
+	}
 
 /****** Schedules New ******/
 

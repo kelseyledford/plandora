@@ -4,7 +4,7 @@
 	</div>
 	<p>Bookmarklet<p>
 	<p>Drag the following link to your bookmarks bar in order to save websites to this page</p>
-	<a href="javascript:(function(){var newURI='http://localhost:3000/groups/<%= @group.id %>/links/new?link[url]='+encodeURIComponent(decodeURIComponent(window.location.href))+'&link[title]='+encodeURIComponent(document.title.replace('%20',' ')); window.location.href=newURI;})();"><%= @group.name %></a>
+	<a href="javascript:(function(){var newURI='localhost:3000/groups/<%= @group.id %>/links/new?link[url]='+encodeURIComponent(decodeURIComponent(window.location.href))+'&link[title]='+encodeURIComponent(document.title.replace('%20',' ')); window.location.href=newURI;})();"><span class="glyphicon glyphicon-plane"></span> <%= @group.name %></a>
 	<% if @group.links %>
 		<% @group.links.each do |l| %>
 			<h3><%= l.title %></h3>

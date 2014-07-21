@@ -2,21 +2,58 @@
    <div x-ng-controller="PackingItemCtrl">
       <div class="item-table">
          <h1>Packing List</h1>
-            <div class="new-packing">
-               <p class="new-item">Add something to pack:</p>
-               <form ng-submit="savePackingItem();">
-                  <input ng-model="newPackingItem.name" name="name" class="form-control">
-                  <input type="submit" class="submit-item">
-               </form>
-            </div>
+            
       	<table class="table table-bordered table-condensed table-hover table-responsive">
-      		<tr ng-repeat='item in packingItems'>
-      			<td>{{item.name}}</td>
-               <td><input type="checkbox"></td>
-      		</tr>
-      	</table>
-      </div>
+            <thead>
+               <div>
+                  <th>Item</th>
+                  <th>Brought by</th>
+               </div>
+               <th>Edit</th>
+               <th>Delete</th>
+            </thead>
+            <tbody>
+         		<tr ng-repeat='packing_item in packingItems'>
+                  <td>
+                  <div ng-hide="packing_item.editing">
+         			   {{packing_item.name}}
+                  </div>
+                  <form ng-show="packing_item.editing" ng-submit="updatePackingItem(packing_item);" class="form-group">
+                    <label for="name">Item:</label>
+                    <input ng-model="packing_item.name" name="name" class="form-control">
+                    <input type="submit" value="Update!" class="submit-item">
+                  </form>
+                  </td>
+                  
+                  <td>
+                  <div ng-hide="packing_item.editing">
+                     {{packing_item.packed_by}}
+                  </div>
+                  <form ng-show="packing_item.editing" ng-submit="updatePackingItem(packing_item);" class="form-group">
+                    <label for="packed_by">Who's Bringing it?:</label>
+                    <input ng-model="packing_item.packed_by" name="packed_by" class="form-control">
+                    <input type="submit" value="Update!" class="submit-item">
+                  </form>
+                  </td>
 
-      
+                  <!-- <td><input type="checkbox"></td> -->
+                  <td><a ng-click="editPackingItem(packing_item);"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                  <td><a ng-click="deletePackingItem(packing_item);"><span class="glyphicon glyphicon-remove"></span></a></td>
+         		</tr>
+            </tbody>
+      	</table>
+
+
+
+         <div class="new-packing">
+            <p class="new-item">Add something to pack:</p>
+            <form ng-submit="savePackingItem();">
+               <input ng-model="newPackingItem.name" name="name" class="form-control" placeholder="Item">
+               <input ng-model="newPackingItem.packed_by" name="packed_by" class="form-control" placeholder="Who's bringing it?">
+               <input type="submit" class="submit-item">
+            </form>
+         </div>
+
+      </div>
    </div>
 </div>
