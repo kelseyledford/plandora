@@ -1,6 +1,6 @@
 <div class= "well well-sm">
 
-<%= form_for [@group, @tag] do |f| %>
+<%= form_for @tag, :url => group_tag_path(@group) do |f| %>
   <% if @tag.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@tag.errors.count, "error") %> prohibited this tag from being saved:

@@ -25,5 +25,5 @@ class Group < ActiveRecord::Base
   has_many :schedules
   has_many :links
   has_many :packing_items
-
+  has_one :tag
 end

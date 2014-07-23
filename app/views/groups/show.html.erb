@@ -28,7 +28,11 @@
 		<%= link_to "Home", group_path(@group) %>
 	</li>
 	<li class="photos">
-		<%= link_to "Instagram", group_tags_path(@group) %>
+		<% unless @group.tag %>
+			<%= link_to "Instagram", new_group_tag_path(@group) %>
+		<% else %>
+			<%= link_to "Instagram", group_tag_path(@group, @tag) %>
+		<% end %>
 	</li>
 	<li class="view_directions">
 		<%unless @group.direction %>
