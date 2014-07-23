@@ -45,22 +45,10 @@ ActiveRecord::Schema.define(version: 20140716211143) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "theme_id"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-  end
-
-  add_index "groups", ["theme_id"], name: "index_groups_on_theme_id", using: :btree
-
-  create_table "invites", force: true do |t|
-    t.string   "email"
-    t.integer  "sender_id"
-    t.integer  "recipient_id"
-    t.string   "token"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "links", force: true do |t|
@@ -162,8 +150,6 @@ ActiveRecord::Schema.define(version: 20140716211143) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "first_name"
-    t.string   "last_name"
   end
 
   create_table "votes", force: true do |t|
