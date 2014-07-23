@@ -9,7 +9,7 @@
   </div> -->
 
   <!-- slideshow -->
-  <% unless @photos %>
+  <% if @photos.count != 0 %>
     <div class='viewer'><%= image_tag @photos.first.images.standard_resolution.url %>
     </div>
       <div class='container clearfix'>
@@ -36,6 +36,7 @@
   <% else %>
     <p>You haven't added any photos to Instagram</p>
   <% end %>
+
  <!-- <%# image_tag photo.user.profile_picture, id: "avatar" %>
           <cite><a href="http://instagram.com/<%# photo.user.username %>" target="_blank"><%# photo.user.username %></a></cite> -->
         <%# distance_of_time_in_words(Time.now, Time.at(photo.created_time.to_i),include_seconds: true) %> 
