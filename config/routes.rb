@@ -1,7 +1,7 @@
 Plandora::Application.routes.draw do
 
   resources :groups do
-    resources :tags
+    resource :tag
     resource :direction
     resource :chat
     resources :polls, shallow: true do

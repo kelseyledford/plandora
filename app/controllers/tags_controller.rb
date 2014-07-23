@@ -1,27 +1,22 @@
 class TagsController < ApplicationController
   
   before_action :set_group
-  before_action :set_tag, only: [:show, :edit, :update, :destroy]
+  before_action :set_tag, only: [:create, :show, :edit, :update, :destroy]
   load_and_authorize_resource :group
-
-  # GET /tags
-  # GET /tags.json
-  def index
-    @tags = Tag.all
-  end
 
   # GET /tags/1
   # GET /tags/1.json
   def show
-    tag = Tag.find(params[:id])
+    # @tag = @group.tag.find(params[:id])
     # binding.pry
     # @photos = Instagram.tag_recent_media("#{tag.name}", { :count => 8,:client_id => ENV['IG_CLIENT_ID']})
-    @photos = Instagram.tag_recent_media("#{tag.name}", {:count => 8}, {:access_token => '12091701.27095e3.030ac770cb8f40ee91b7a34da2e62298'})
+    @photos = Instagram.tag_recent_media("#{@group.tag.name}", {:count => 8}, {:access_token => '12091701.27095e3.030ac770cb8f40ee91b7a34da2e62298'})
   end
 
   # GET /tags/new
   def new
-    @tag = Tag.new(params[:tag])
+    @tag = Tag.new
+    # (params[:tag])
   end
 
   # GET /tags/1/edit
@@ -31,11 +26,9 @@ class TagsController < ApplicationController
   # POST /tags
   # POST /tags.json
   def create
-    @tag = Tag.new(tag_params)
-
+    @tag = Tag.new(tag_params.merge(group: @group))
     respond_to do |format|
      if @tag.save
-
         # @instagrams = Instagram.tag_recent_media(@tag.name.gsub(" ",""), { :count=> 8, :client_id => ENV['IG_CLIENT_ID']})
         @instagrams = Instagram.tag_recent_media(@tag.name.gsub(" ",""), {:count=> 8}, {:access_token => '12091701.27095e3.030ac770cb8f40ee91b7a34da2e62298'})
 
@@ -43,10 +36,7 @@ class TagsController < ApplicationController
       #   text = post["caption"]["text"] rescue ""
       #   Post.save_post(@tag.id, text, post["user"]["profile_picture"], post["user"]["username"])
       # end
-     end
-
-      if @tag.save
-        format.html { redirect_to group_tags_path(@group, @tag), notice: 'Tag was successfully created.' }
+        format.html { redirect_to group_tag_path(@group, @tag), notice: 'Tag was successfully created.' }
         format.json { render json: @tag, status: :created, location: @tag }
       else
         format.html { render action: 'new' }
@@ -58,8 +48,8 @@ class TagsController < ApplicationController
   # PATCH/PUT /tags/1.json
   def update
     respond_to do |format|
-       if @tag.update(tag_params)
-        format.html { redirect_to group_tags_path(@group, @tag), notice: 'Tag was successfully updated.' }
+       if @tag.update_attributes(tag_params)
+        format.html { redirect_to group_tag_path(@group, @tag), notice: 'Tag was successfully updated.' }
         format.json { head :no_content }
        else
         format.html { render group_tag_edit_path(@group, @tag) }
@@ -86,12 +76,12 @@ class TagsController < ApplicationController
 
     # Use callbacks to share common setup or constraints between actions.
     def set_tag
-      @tag = Tag.find(params[:id])
+      @tag = @group.tag
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tag_params
-      params.require(:tag).permit(:name)
+      params.require(:tag).permit(:name, :group_id)
     end
 
 end

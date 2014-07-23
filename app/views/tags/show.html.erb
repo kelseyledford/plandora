@@ -9,26 +9,34 @@
   </div> -->
 
   <!-- slideshow -->
-  <div class='viewer'><%= image_tag @photos.first.images.standard_resolution.url %>
-  </div>
-    <div class='container clearfix'>
-       <div class='col-sm-2'></div>
-          <div class='col-sm-8'>
-            <div class='static-viewer col-sm-12 clearfix'><%= image_tag @photos.first.images.standard_resolution.url %>
-                 <div class='caption'><a class='left' href="http://instagram.com/<%= @photos.first.user.username %>" target="_blank"><%= @photos.first.user.username %> </a>
-                   <div class='time pull-right'><%= distance_of_time_in_words(Time.now, Time.at(@photos.first.created_time.to_i),include_seconds: true) %></div>
+  <% if @photos.count != 0 %>
+    <div class='viewer'><%= image_tag @photos.first.images.standard_resolution.url %>
+    </div>
+      <div class='container clearfix'>
+         <div class='col-sm-2'></div>
+            <div class='col-sm-8'>
+              <div class='static-viewer col-sm-12 clearfix'>
+                  <%= image_tag @photos.first.images.standard_resolution.url %>
+
+                     <div class='caption'><a class='left' href="http://instagram.com/<%= @photos.first.user.username %>" target="_blank"><%= @photos.first.user.username %> </a>
+                       <div class='time pull-right'><%= distance_of_time_in_words(Time.now, Time.at(@photos.first.created_time.to_i),include_seconds: true) %></div>
+                    </div>
                 </div>
-            </div>
-           <div class='col-sm-12'>
-            <% @photos.each do |photo|%>
-              <div class='thumbs col-sm-3'><%= image_tag photo.images.standard_resolution.url %>
-                <div class='caption'> <%= distance_of_time_in_words(Time.now, Time.at(photo.created_time.to_i),include_seconds: true) %></div>
+               <div class='col-sm-12'>
+                <% @photos.each do |photo|%>
+                  <div class='thumbs col-sm-3'><%= image_tag photo.images.standard_resolution.url %>
+                    <div class='caption'> <%= distance_of_time_in_words(Time.now, Time.at(photo.created_time.to_i),include_seconds: true) %></div>
+                  </div>
+                <% end %>
+               </div>
               </div>
-            <% end %>
-           </div>
-          </div>
-  <div class='col-sm-2'></div>
-   </div>
+
+    <div class='col-sm-2'></div>
+     </div>
+  <% else %>
+    <p>You haven't added any photos to Instagram</p>
+  <% end %>
+
  <!-- <%# image_tag photo.user.profile_picture, id: "avatar" %>
           <cite><a href="http://instagram.com/<%# photo.user.username %>" target="_blank"><%# photo.user.username %></a></cite> -->
         <%# distance_of_time_in_words(Time.now, Time.at(photo.created_time.to_i),include_seconds: true) %> 
@@ -40,5 +48,4 @@
 <%# end %>
 
 <%= link_to 'Edit', edit_group_tag_path(@group, @tag), class: "btn btn-info pull-left" %> |
-<%= link_to 'Back', group_tags_path(@group), class: "btn btn-info pull-left" %>
 
