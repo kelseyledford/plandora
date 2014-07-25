@@ -1,63 +1,51 @@
-
-<div class="group_show_container">
-	<div class="group_show_info">	
-		<div class="group_name">
-				<h1><%= @group.name %></h1>
-		</div>
-		<div class="group_image">
-			<% if @group.avatar_file_name %>
-				<%= image_tag @group.avatar.url %>
-			<% end %>
-		</div>
-		<div class="group_description">
-			   <%= @group.description %>
-		</div>
-		<div class="group_members">
-			<strong><p>Group Members</p></strong>
-			<ul>
-				<% @group.users.each do |user| %>
-				<li class="group_members_names"><%= user.name %></li>
-				<% end %>
-			</ul>
-		</div>
-	</div>
-</div>
-
-<ul>
-	<li>
+<div class="container-fluid group_show_container row">
+	
+	<div id="group_home_feature" class="col-md-1 col-md-6 feature_container">
 		<%= link_to "Home", group_path(@group) %>
-	</li>
-	<li class="photos">
+	</div>
+	<div id="group_show_feature" class="col-md-1 col-md-6 feature_container">
+		<h1><%= @group.name %></h1>
+		<% if @group.avatar_file_name %>
+				<%= image_tag @group.avatar.url %>
+		<% end %>
+		<%= @group.description %>
+		<p>Group Members</p>
+		<ul>
+			<% @group.users.each do |user| %>
+			<li><%= user.name %></li>
+			<% end %>
+		</ul>
+	</div>
+	<div id="group_instagram_feature" class="col-md-1 col-md-6 feature_container">
 		<% unless @group.tag != nil %>
 			<%= link_to "Instagram", new_group_tag_path(@group) %>
 		<% else %>
 			<%= link_to "Instagram", group_tag_path(@group, @tag) %>
 		<% end %>
-	</li>
-	<li class="view_directions">
+	</div>
+	<div id="group_description_feature" class="col-md-1 col-md-6 feature_container">
 		<%unless @group.direction %>
 			<%= link_to "Directions", new_group_direction_path(@group) %>
 		<% else %>
 			<%= link_to "Directions", group_direction_path(@group, @direction) %>
 		<% end %>
-	</li>
-	<li class="view_chat">
+	</div>
+	<div id="group_chat_feature" class="col-md-1 col-md-6 feature_container">
 		<%= link_to "Chat", group_chat_path(@group, @chat) %>
-	</li>
-	<li class="view_polls">
+	</div>
+	<div id="group_link_feature" class="col-md-1 col-md-6 feature_container">
 		<%= link_to "Polls", group_polls_path(@group) %>
-	</li>
-	<li class="packing_list_link">
+	</div>
+	<div id="group_packing_feature" class="col-md-1 col-md-6 feature_container">
 		<%= link_to "Packing List", group_packing_items_path(@group, @packing_list) %>
-	</li>
-	<li class="itinerary_link">
+	</div>
+	<div id="group_itinerary_feature" class="col-md-1 col-md-6 feature_container">
 		<%= link_to "Itinerary", group_schedules_path(@group, @schedule) %>
-	</li>
-	<li class="ideas">
+	</div>
+	<div id="group_ideas_feature" class="col-md-1 col-md-6 feature_container">
 		<%= link_to "Ideas", group_links_path(@group, @links) %>
-	</li>
-	<li class="edit_group_link">
+	</div>
+	<div id="group_edit_feature" class="col-md-1 col-md-6 feature_container">
 		<%= link_to "Edit Group", edit_group_path(@group) %>
-	</li>
-</ul>
-
+	</div>	
+</div>

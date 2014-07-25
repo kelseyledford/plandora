@@ -23,15 +23,23 @@ body {
 	margin-top:80px;
 	list-style-type:none;
 }
-/****** Group Features Nav ******/
 
-.group_features_nav {
-	position: fixed;
+/****** Group Show ******/
+
+.feature_container {
+	height: 300px;
+	padding: 0 !important;
+	img {
+		height:50%;
+		width:100%;
+	}
 }
 
-.group_features_nav button {
-	margin-top: 210px;
+#group_show_feature {
+	overflow-y: scroll;
 }
+
+
 
 /****** Group New ******/
 
@@ -115,109 +123,13 @@ textarea {
 }
 
 
-/****** Group Show ******/
 
-
-.group_show_container {
-	height: auto;
-	width: 90%;
-	margin: 0 auto;
-	padding-bottom: 20px;
-	background-color: white;
-	margin-top: 80px;
-}
-.group_name {
-	text-align: center;
-	font-family: 'Qwigley', cursive;
-		h1 {
-		font-size: 70px;
-		font-weight: bold;
-	}
-}
-.group_show_info {
-	height: 92%;
-	width: 85%;
-	border: 5px solid black;
-	margin: 0 auto;
-	color: black;
-	margin-top: 10px;
-	border-radius: 40px;
-	padding: 10px 50px;
-}
-.group_image {
-	margin: 0 auto;
-	text-align: center;
-	height: auto;
-	width: 400px;
-	margin-top: 30px;
-		img {
-		width: 100%;
-		height: auto;
-		border-radius: 10px;
-		border: 1px solid black;
-	}
-}
-.group_description, .group_members {
-	height: 150px;
-	overflow: scroll;
-}
-.group_members {
-	height: 180px;
-	overflow: scroll;
-}
-.group_description {
-	margin-top: 20px;
-	text-align: center;
-	font-size: 18px;
-}
-.group_members {
-	margin-top: 10px;
-		p {
-		text-align: center;
-		font-size: 20px;
-	}
-	ul li {
-	list-style-type: none;
-	text-align: center;
-	margin-left: -50px;
-	}
-}
-.btn-group {
-	font-size: 20px;
-	margin-left: 50px;
-	z-index: 600000;
-	font-family: sans-serif;
-}
-.group_features_nav button {
-	font-size: 20px;
-	height: 50px;
-	background-color: rgba(100,180,240,.85);
-	border: none;
-	color: darkblue;
-}
-.group_features_nav li {
-	width: 220px !important;
-}
-.group_features_nav li a:hover {
-	background-color: lightblue !important;
-}
 
 /****** Media Queries ******/
 
 @media (max-width: 700px) {
 
-	.group_show_container {
-		width: 100%;
-	}
-	.group_show_info {
-		height: 80%;
-		padding: 5px 10px 5px 10px;
-		overflow: scroll;
-	}
-	.group_name h1 {
-		font-size: 19px;
-		font-weight: bolder;
-	}
+	
 }
 
 @media (max-width: 480px) {
@@ -242,16 +154,6 @@ textarea {
 		height: 380px;
 		margin-top: 60px;
 	}
-	.group_members_list {
-		overflow: scroll;
-		border-radius: 10px;
-		height: 80px;
-		width: 100%;
-	}
-	.group_members_list label {
-		padding: 1px 5px;
-		margin: 1px 3px;
-	}
 	.group_form {
 		width: 100%;
 		overflow: scroll;
@@ -267,7 +169,6 @@ textarea {
 		width: 90%;
 		border-radius: 12px;
 	}
-
 	.edit_group_container {
 		height: auto;
 		width: 100%;
@@ -288,40 +189,9 @@ textarea {
 		height: 430px;
 		width: 100%;
 	}
-	.group_show_info {
-		width: 100%;
-		height: 95%;
-		border: none;
-		margin-top: -25px;
-	}
-	.group_image {
-		width: 100%;
-		height: 100px;
-	}
-	.group_image img {
-		height: auto;
-		width: 100%;
-	}
-	.group_description{
-		margin: 0 auto;
-		text-align: center;
-		height: auto;
-	}
-	.group_members {
-		height: auto;
-		margin: 0 auto;
-	}
-	.group_members p {
-		text-align: center;
-		font-size: 14px;
-		padding: 5px 0;
-	}
+	
 	.btn-primary {
 		width: 100%;
-	}
-	.group_name h1{
-		font-size: 40px;
-		margin-top: 0;
 	}
 	
 }
