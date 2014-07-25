@@ -1,8 +1,8 @@
 
-<p>
-  <strong>Name:</strong>
-    <%= @tag.name %>
-</p>
+<h1 id="tags_header">
+  <strong>#</strong><%= @tag.name %>
+  <%= link_to 'Edit', edit_group_tag_path(@group, @tag), class: "btn btn-info" %>  
+</h1>
  
   <!-- <div class="scrollbar">
       <div class="handle"></div>
@@ -47,5 +47,5 @@
 	<%#= image_tag instagram.images.standard_resolution.url %>
 <%# end %>
 
-<%= link_to 'Edit', edit_group_tag_path(@group, @tag), class: "btn btn-info pull-left" %> |
+
 

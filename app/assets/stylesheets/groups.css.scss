@@ -29,14 +29,25 @@ body {
 .feature_container {
 	height: 300px;
 	padding: 0 !important;
+	border: 1px solid black;
 	img {
-		height:50%;
+		height:100%;
 		width:100%;
 	}
 }
 
 #group_show_feature {
 	overflow-y: scroll;
+	background-color: #ADF8E6;
+	h1, p, ul {
+		text-align: center;
+	}
+	ul {
+		list-style-type: none;
+	}
+	ul li {
+		margin-left: -40px;
+	}
 }
 
 
