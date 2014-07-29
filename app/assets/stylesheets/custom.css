@@ -81,18 +81,19 @@ footer, .navbar-custom, .navbar-header, #groups_background, #features_background
 /****** Footer and Contact Modal ******/
 
 
+
 footer {
+	position: fixed;
 	color: black;
 	font-size: 14px;
 	text-align: center;
 	border-top: 1px solid black;
-	position:relative;
 	padding-top: 10px;
-    height:50px;
-    bottom:0px;
-    left:0px;
-    right:0px;
-    margin-bottom: -5px;
+    height: 50px;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
 }
 .contact:hover, .about_nav:hover, .tutorial_nav:hover {
 	color: black;
@@ -163,7 +164,6 @@ footer {
 @media (max-width: 480px) {
 	footer {
 		font-size: 12px;
-		position: relative;
 	}
 	.contact_images {
 		width: 100px;
